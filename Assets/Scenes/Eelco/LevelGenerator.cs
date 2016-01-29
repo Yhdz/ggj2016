@@ -3,11 +3,9 @@ using System.Collections;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public static int aap = 4;
-
     public GameObject prefabTileFloor = null;
 
-    public Dancer prefabDancer = null;
+    public GameObject prefabDancer = null;
     
     public Position2D mapSize = null;
     
@@ -21,7 +19,7 @@ public class LevelGenerator : MonoBehaviour
 
     GameObject[,] map = null;
 
-    Dancer dancer = null;
+    GameObject dancer = null;
 
     Position2D dancerPosition;
     
@@ -37,9 +35,7 @@ public class LevelGenerator : MonoBehaviour
             }
 
         dancerPosition = new Position2D( Mathf.FloorToInt( Random.value * mapSize.i ), Mathf.FloorToInt( Random.value * mapSize.j ) );
-        dancer = Instantiate( prefabDancer, new Vector3( dancerPosition.i*tileSize-mapSize.i*tileSize*0.5f,dancerPosition.j*tileSize, -1.0f ), Quaternion.identity ) as Dancer;
-        dancer.SetMapPosition( dancerPosition );
-        dancer.UpdatePosition( mapSize, tileSize );
+        dancer = Instantiate( prefabDancer, new Vector3( dancerPosition.i*tileSize-mapSize.i*tileSize*0.5f,dancerPosition.j*tileSize, -1.0f ), Quaternion.identity ) as GameObject;
     }
 
     void Update()
@@ -53,7 +49,7 @@ public class LevelGenerator : MonoBehaviour
 
             // Move one step of the pattern
             dancerPosition += dancePattern.GetCurrentMove();
-            dancer.transform.position = new Vector3();
+            dancer.transform.position = new Vector3( dancerPosition.i * tileSize - mapSize.i * tileSize * 0.5f, dancerPosition.j * tileSize, -1.0f );
             dancePattern.NextMove();
         }
     }

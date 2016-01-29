@@ -167,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 218756863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -184,17 +184,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabTileFloor: {fileID: 154258, guid: b7054d2db7db7b040b80aee89ea9ce93, type: 2}
-  prefabDancer1: {fileID: 11442096, guid: f63ac380d218b2f45b428854b2f62e2d, type: 2}
-  prefabDancer2: {fileID: 11451850, guid: 80a998f9a2d7199488644ef58dd678cd, type: 2}
+  prefabDancer: {fileID: 197588, guid: f63ac380d218b2f45b428854b2f62e2d, type: 2}
   mapSize:
-    i: 9
-    j: 9
+    i: 10
+    j: 10
   tileSize: 0.36
-  dancePattern1:
-    pattern: 000000000100000002000000
-    currentIndex: 0
-  dancePattern2:
-    pattern: 020000000000000003000000
+  dancePattern:
+    pattern:
+    - i: 1
+      j: 0
+    - i: 0
+      j: 1
+    - i: -1
+      j: 0
+    - i: 0
+      j: -1
     currentIndex: 0
   beatInterval: 0.8
   beatTimer: 0
