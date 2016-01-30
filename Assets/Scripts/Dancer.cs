@@ -48,8 +48,8 @@ public class Dancer : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Update the start position from current position by matching it to the grid
-        int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize );
-        int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize );
+        int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize + 0.5f );
+		int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize + 0.5f );
 		position = new Vector2 (i, j);
 		Vector2 scenePosition = mapOffset + mapTileSize * position;
 
@@ -71,11 +71,15 @@ public class Dancer : MonoBehaviour
             {
 				Vector2 currentMove = currentPattern.GetMove(sequencer.CurrentBeat);
 				Vector2 newPosition = position + currentMove;
+				Vector2 newScenePosition = mapOffset + mapTileSize * newPosition;
+
+				int mask = 1 << LayerMask.NameToLayer("Collider");
+				RaycastHit2D hit = Physics2D.Linecast(startScenePosition, newScenePosition, mask);
 
 				// test if new move is outside of field
-				if (levelManager.IsPositionInField((int)newPosition.x, (int)newPosition.y)) {
+				//if (levelManager.IsPositionInField((int)newPosition.x, (int)newPosition.y)) {
+				if (hit.collider == null) {
 					position = newPosition;
-					Vector2 newScenePosition = mapOffset + mapTileSize * position;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
 
 					// decrease Juliette happyiness
