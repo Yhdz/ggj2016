@@ -2790,6 +2790,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11442400, guid: 4bf00084ea7b3ce4f826e70e90ad7d21, type: 2}
+      propertyPath: patternFrame3
+      value: 
+      objectReference: {fileID: 2800000, guid: c30eca6cb83a79643b7abbf70f0598dc, type: 3}
+    - target: {fileID: 11442400, guid: 4bf00084ea7b3ce4f826e70e90ad7d21, type: 2}
+      propertyPath: patternFrame2
+      value: 
+      objectReference: {fileID: 2800000, guid: e9cea680ba3a3b54dada57f8f115d426, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bf00084ea7b3ce4f826e70e90ad7d21, type: 2}
   m_IsPrefabParent: 0
