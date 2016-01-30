@@ -9,6 +9,8 @@ public class Dancer : MonoBehaviour
     // The dance pattern the dancer is following
     public DancePattern currentPattern = null;
 
+	public AnimationCurve ErrorCurve = new AnimationCurve ();
+
     // The sprite animation series the dancer follows
     public Sprite[] spriteAnimation = null;
 
@@ -37,6 +39,8 @@ public class Dancer : MonoBehaviour
 
 	private LevelManager levelManager = null;
 
+	private bool useErrorCurve = false;
+
     void Start()
     {
         // Fetch some of the objects for future use
@@ -62,6 +66,8 @@ public class Dancer : MonoBehaviour
         // Update position to move to when the beat has passed
         if( sequencer.IsBeatChangeFrame() )
         {
+			useErrorCurve = false;
+
             // Update the start position from current position by matching it to the grid
 			Vector2 startScenePosition = mapOffset + mapTileSize * position;
 			transitionStartPosition = new Vector3( startScenePosition.x, startScenePosition.y, transform.position.z );
@@ -84,9 +90,12 @@ public class Dancer : MonoBehaviour
 				}
 				else {
 					transitionEndPosition = transitionStartPosition;
+					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
 
 					// decrease Juliette happyiness
 					levelManager.JulietteHappiness = Mathf.Max(levelManager.JulietteHappiness - 0.1f, 0.0f);
+
+					useErrorCurve = true;
 				}
             }
             else
@@ -106,9 +115,16 @@ public class Dancer : MonoBehaviour
 			levelManager.JulietteHappiness = Mathf.Min(levelManager.JulietteHappiness + 0.05f, 1.0f);
 		}
 
-        // Use the set animation curve to apply the transition to the next position
-		float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve(sequencer.CurrentBeat).Evaluate( sequencer.GetBeatPercentage() );
-        Vector3 animationState = Vector3.Lerp( transitionStartPosition, transitionEndPosition, animationProgress );
-        transform.position = new Vector3( animationState.x, animationState.y, transitionStartPosition.z );
+		if (!useErrorCurve) {
+			// Use the set animation curve to apply the transition to the next position
+			float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve (sequencer.CurrentBeat).Evaluate (sequencer.GetBeatPercentage ());
+			Vector3 animationState = Vector3.Lerp (transitionStartPosition, transitionEndPosition, animationProgress);
+			transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
+		} else {
+			// Use the set animation curve to apply the transition to the next position
+			float animationProgress = ErrorCurve.Evaluate (sequencer.GetBeatPercentage ());
+			Vector3 animationState = Vector3.Lerp (transitionStartPosition, transitionEndPosition, animationProgress);
+			transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
+		}
     }
 }

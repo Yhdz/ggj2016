@@ -204,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 900, y: 200, z: -2}
+  m_LocalPosition: {x: 900, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470878}
@@ -396,6 +396,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPattern: {fileID: 0}
+  ErrorCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: -0.0010989011
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.24576078
+      value: 0.500688
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.49521452
+      value: 0.0033531156
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   spriteAnimation:
   - {fileID: 21300000, guid: 9b9e5cee559b441409c016e94e98eb4e, type: 3}
   - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
@@ -461,9 +482,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moves:
-  - {x: -1, y: 0}
-  - {x: 0, y: 1}
-  - {x: -1, y: 0}
+  - {x: -2, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   curves:
   - serializedVersion: 2
     m_Curve:
