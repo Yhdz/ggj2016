@@ -454,7 +454,7 @@ MonoBehaviour:
   - {fileID: 11428632}
   - {fileID: 11434368}
   dancerRomeo: {fileID: 11406560}
-  JulietteHappiness: 0.5
+  JulietteHappiness: 1
   currentPatternIndex: 0
   nextPatternIndex: -1
 --- !u!114 &11428632
