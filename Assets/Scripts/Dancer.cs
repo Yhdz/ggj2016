@@ -81,12 +81,12 @@ public class Dancer : MonoBehaviour
 				if (hit.collider == null) {
 					position = newPosition;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
-
-					// decrease Juliette happyiness
-					levelManager.JulietteHappiness = Mathf.Max(levelManager.JulietteHappiness - 0.1f, 0.0f);
 				}
 				else {
 					transitionEndPosition = transitionStartPosition;
+
+					// decrease Juliette happyiness
+					levelManager.JulietteHappiness = Mathf.Max(levelManager.JulietteHappiness - 0.1f, 0.0f);
 				}
             }
             else
