@@ -16,7 +16,7 @@ public class Sequencer : MonoBehaviour {
 	public int previousMeasure = -1;
 	public float beatPercentage = 0.0f;
 	public float measurePercentage = 0.0f;
-	private new AudioSource audio;
+	new private AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +49,6 @@ public class Sequencer : MonoBehaviour {
 	public void StopSequencer()
 	{
 		IsRunning = false;
-		audio.Stop ();
 	}
 
 	public bool IsBeatChangeFrame(){
