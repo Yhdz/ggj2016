@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class Sequencer : MonoBehaviour {
 	public float BeatsPerMinute = 80;
 	public int MeasureLength = 3;
@@ -15,11 +16,14 @@ public class Sequencer : MonoBehaviour {
 	public int previousMeasure = -1;
 	public float beatPercentage = 0.0f;
 	public float measurePercentage = 0.0f;
+	private AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
+		audio = GetComponent<AudioSource> ();
+
 		for (int i = 0; i < 3; i++) {
-			AudioClip clip = Resources.Load ("Music/Sequence" + i) as AudioClip;
+			AudioClip clip = Resources.Load ("Music/MusicSequence1") as AudioClip;
 			audioSequences.Add (clip);
 		}
 
@@ -34,6 +38,10 @@ public class Sequencer : MonoBehaviour {
 			previousBeat = -1;
 			previousMeasure = -1;
 			TimeRunning = 0.0f;
+
+			audio.clip = audioSequences [Random.Range (0, 3)];
+			audio.Play ();
+			audio.loop = true;
 		}
 		IsRunning = true;
 	}
@@ -79,12 +87,5 @@ public class Sequencer : MonoBehaviour {
 	}
 
 	void UpdateSounds() {
-		if (IsMeasureChangeFrame ()) {
-			AudioSource audio = GetComponent<AudioSource> ();
-
-			audio.Stop ();
-			audio.clip = audioSequences [Random.Range (0, 3)];
-			audio.Play ();
-		}
 	}
 }
