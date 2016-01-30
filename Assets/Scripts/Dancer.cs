@@ -92,8 +92,8 @@ public class Dancer : MonoBehaviour
 					transitionEndPosition = transitionStartPosition;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
 
-					// decrease Juliette happyiness
-					levelManager.JulietteHappiness = Mathf.Max(levelManager.JulietteHappiness - 0.1f, 0.0f);
+                    // decrease Juliette happyiness
+                    levelManager.LoseHappiness(this);
 
 					useErrorCurve = true;
 				}
@@ -111,9 +111,7 @@ public class Dancer : MonoBehaviour
             }
         }
 
-		if (sequencer.IsMeasureChangeFrame ()) {
-			levelManager.JulietteHappiness = Mathf.Min(levelManager.JulietteHappiness + 0.05f, 1.0f);
-		}
+		
 
 		if (!useErrorCurve) {
 			// Use the set animation curve to apply the transition to the next position

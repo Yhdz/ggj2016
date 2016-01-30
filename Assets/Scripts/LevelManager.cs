@@ -24,7 +24,9 @@ public class LevelManager : MonoBehaviour
     //  The dancer that represents Romeo
     public Dancer dancerRomeo = null;
 
-	public float JulietteHappiness = 0.5f;
+	public float JulietteHappiness = 1.0f;
+
+    public float julietteHappinessChunk = 0.2f;
 
     // The dancers in the level
     Dancer[] dancers = null;
@@ -87,8 +89,18 @@ public class LevelManager : MonoBehaviour
         for( int i = 0; i < sortZOrderObjects.Length; i++ )
             sortZOrderObjects[i].GetComponent<SpriteRenderer>().sortingOrder = (i + 1);
 
-        uiOverlay.health = JulietteHappiness;
+        uiOverlay.health = Mathf.Clamp01(JulietteHappiness);
     }
+
+    public void LoseHappiness( Dancer dancer )
+    {
+        if( dancer == dancerRomeo )
+        {
+            JulietteHappiness -= julietteHappinessChunk;
+            if ( JulietteHappiness <= 0.0f )
+                StartCoroutine( EndGameSequence() );
+        }
+        }
 
 	public void OnDestinationReached()
 	{
