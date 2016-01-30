@@ -49,6 +49,7 @@ public class Sequencer : MonoBehaviour {
 	public void StopSequencer()
 	{
 		IsRunning = false;
+		audio.Stop ();
 	}
 
 	public bool IsBeatChangeFrame(){
@@ -74,6 +75,10 @@ public class Sequencer : MonoBehaviour {
 	}
 
 	private void UpdateTiming() {
+		if (!IsRunning) {
+			return;
+		}
+
 		previousBeat = CurrentBeat;
 		previousMeasure = CurrentMeasure;
 

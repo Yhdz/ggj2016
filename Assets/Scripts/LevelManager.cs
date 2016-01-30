@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 /**
@@ -104,4 +105,22 @@ public class LevelManager : MonoBehaviour
             dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
         }
     }
+
+	public void OnDestinationReached()
+	{
+		StartCoroutine(EndGameSequence());
+	}
+
+	private IEnumerator EndGameSequence()
+	{
+		while (!sequencer.IsBeatChangeFrame ()) {
+			yield return null;
+		}
+
+		sequencer.StopSequencer ();
+
+		yield return new WaitForSeconds (2.0f);
+
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("DanceLevel");
+	}
 }
