@@ -36,7 +36,9 @@ public class LevelManager : MonoBehaviour
     public int nextPatternIndex = -1;
 
     // Link to the sequencer
-    Sequencer sequencer = null;
+    private Sequencer sequencer = null;
+
+	private UIOverlay uiOverlay = null;
 
     // Z-sort list
     public GameObject[] sortZOrderObjects = null;
@@ -48,6 +50,7 @@ public class LevelManager : MonoBehaviour
     {
         // Fetch sequencer
         sequencer = GetComponent<Sequencer>();
+		uiOverlay = GameObject.FindObjectOfType<UIOverlay>();
 
         // Collect all dancers
         dancers = GameObject.FindObjectsOfType<Dancer>();
@@ -80,6 +83,8 @@ public class LevelManager : MonoBehaviour
         System.Array.Sort( sortZOrderObjects, new YPositionSorter() );
         for( int i = 0; i < sortZOrderObjects.Length; i++ )
             sortZOrderObjects[i].GetComponent<SpriteRenderer>().sortingOrder = (i + 1);
+
+        uiOverlay.health = JulietteHappiness;
     }
 
 	public void OnDestinationReached()
