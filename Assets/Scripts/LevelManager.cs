@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 /**
  * Manages the level: the tiles, the dancers, the beat, everything.
@@ -37,7 +36,12 @@ public class LevelManager : MonoBehaviour
     public int nextPatternIndex = -1;
 
     // Link to the sequencer
-    Sequencer sequencer = null;
+    private Sequencer sequencer = null;
+
+	private UIOverlay uiOverlay = null;
+
+    // Z-sort list
+    public GameObject[] sortZOrderObjects = null;
 
     /**
      * Starts the level.
@@ -46,6 +50,7 @@ public class LevelManager : MonoBehaviour
     {
         // Fetch sequencer
         sequencer = GetComponent<Sequencer>();
+		uiOverlay = GameObject.FindObjectOfType<UIOverlay>();
 
         // Collect all dancers
         dancers = GameObject.FindObjectsOfType<Dancer>();
@@ -67,26 +72,19 @@ public class LevelManager : MonoBehaviour
         if( Input.GetKeyDown( KeyCode.D ) )
             nextPatternIndex = 2;
 
-        // Update UI highlighting
-        for( int i = 0; i < patternSlots.Length; i++ )
-        {
-            /*SpriteRenderer spriteRenderer = patternSlots[i].GetComponent<SpriteRenderer>();
-            if( i == currentPatternIndex )
-                spriteRenderer.color = Color.green;
-            else if( i == nextPatternIndex )
-                spriteRenderer.color = Color.red;
-            else
-                spriteRenderer.color = Color.white;*/
-        }
-
-
         // Move to next pattern if a different one is selected
         if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
         {
             currentPatternIndex = nextPatternIndex;
-
             dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
         }
+
+        // Update Z-order
+        System.Array.Sort( sortZOrderObjects, new YPositionSorter() );
+        for( int i = 0; i < sortZOrderObjects.Length; i++ )
+            sortZOrderObjects[i].GetComponent<SpriteRenderer>().sortingOrder = (i + 1);
+
+        uiOverlay.health = JulietteHappiness;
     }
 
 	public void OnDestinationReached()
@@ -115,4 +113,19 @@ public class LevelManager : MonoBehaviour
 			return false;
 		}
 	}
+}
+
+public class YPositionSorter : IComparer
+{
+    int IComparer.Compare( System.Object x, System.Object y )
+    {
+        GameObject a = (GameObject)x;
+        GameObject b = (GameObject)y;
+
+        if ( a.transform.position.y != b.transform.position.y )
+            return (int)(b.transform.position.y - a.transform.position.y);
+        else
+            return (int)(b.transform.position.x - a.transform.position.x);
+    }
+
 }
