@@ -90,19 +90,11 @@ public class LevelManager : MonoBehaviour
                 spriteRenderer.color = Color.white;
         }
 
-        if( sequencer.IsBeatChangeFrame() )
-        {
-            // Update dancers
-            foreach( Dancer dancer in dancers )
-            {
-                dancer.Move( tileSize );
-            }
 
-            if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
-            {
-                currentPatternIndex = nextPatternIndex;
-                dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
-            }
+        if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
+        {
+            currentPatternIndex = nextPatternIndex;
+            dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
         }
     }
 }

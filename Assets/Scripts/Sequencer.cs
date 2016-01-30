@@ -74,7 +74,7 @@ public class Sequencer : MonoBehaviour {
 		TimeRunning += Time.deltaTime;
 		CurrentBeat = ((int)Mathf.Floor (TimeRunning / beatDuration)) % MeasureLength;
 		CurrentMeasure = ((int)Mathf.Floor (TimeRunning / beatDuration)) / 3;
-		beatPercentage = Mathf.Repeat (TimeRunning, beatDuration);
+		beatPercentage = Mathf.Repeat (TimeRunning, beatDuration) / beatDuration;
 		measurePercentage = Mathf.Repeat (TimeRunning, beatDuration * MeasureLength);
 	}
 

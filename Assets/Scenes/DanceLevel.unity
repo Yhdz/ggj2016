@@ -85,50 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &33287734
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 192462, guid: 94598a9daef094a4a9457f8ac5a7368a, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 33287735}
-  - 114: {fileID: 33287736}
-  m_Layer: 0
-  m_Name: input
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &33287735
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 449244, guid: 94598a9daef094a4a9457f8ac5a7368a, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 33287734}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -85.17099, y: -11.581392, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1609292759}
-  m_RootOrder: 0
---- !u!114 &33287736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11466482, guid: 94598a9daef094a4a9457f8ac5a7368a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 33287734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd55ac837044f4dc9a7dc9e4a4cab71a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SequenceOneGameObject: {fileID: 596957993}
-  SequenceTwoGameObject: {fileID: 63881967}
-  SequenceThreeGameObject: {fileID: 1323782027}
-  bar: {fileID: 1393618466}
 --- !u!1 &63881967
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,11 +109,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63881967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -298, y: 41.58139, z: 0}
+  m_LocalPosition: {x: -100, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1609292759}
+  m_RootOrder: 5
 --- !u!212 &63881969
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -200,11 +156,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern:
+  moves:
   - {x: 1, y: 0}
   - {x: 0, y: -1}
   - {x: 1, y: 0}
+  curves:
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   currentIndex: 0
+  previousIndex: -1
 --- !u!1 &218756863
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +221,8 @@ GameObject:
   - 124: {fileID: 218756865}
   - 81: {fileID: 218756864}
   - 114: {fileID: 218756869}
+  - 114: {fileID: 218756870}
+  - 82: {fileID: 218756871}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -266,7 +271,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 196
+  orthographic size: 190
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -307,12 +312,107 @@ MonoBehaviour:
   offset: {x: -150, y: -150}
   mapWidth: 7
   mapHeight: 7
-  beatInterval: 0.5
   patternSlots:
   - {fileID: 596957996}
   - {fileID: 63881970}
   - {fileID: 1323782030}
+  timerBar: {fileID: 2064055037}
   dancerRomeo: {fileID: 421059840}
+--- !u!114 &218756870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218756863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f8098ad8ac34c1f8ac6ad8e58745d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeatsPerMinute: 120
+  MeasureLength: 3
+  CurrentBeat: 0
+  CurrentMeasure: 0
+  IsRunning: 0
+  TimeRunning: 0
+  previousBeat: -1
+  previousMeasure: -1
+  beatPercentage: 0
+  measurePercentage: 0
+--- !u!82 &218756871
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218756863}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &229881201
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,11 +928,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 596957993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -326, y: 41.58139, z: 0}
+  m_LocalPosition: {x: -128, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1609292759}
+  m_RootOrder: 4
 --- !u!212 &596957995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -875,11 +975,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern:
+  moves:
   - {x: -1, y: 0}
   - {x: 0, y: 1}
   - {x: -1, y: 0}
+  curves:
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   currentIndex: 0
+  previousIndex: -1
 --- !u!1 &636086217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,11 +2738,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1323782027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -270, y: 41.58139, z: 0}
+  m_LocalPosition: {x: -72, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1609292759}
+  m_RootOrder: 6
 --- !u!212 &1323782029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2638,10 +2785,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern:
-  - {x: 0, y: 2}
+  moves:
+  - {x: 0, y: 1}
+  - {x: 0, y: 1}
   - {x: -1, y: 0}
+  curves:
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   currentIndex: 0
+  previousIndex: -1
 --- !u!1 &1330841834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,7 +2847,7 @@ GameObject:
   - 4: {fileID: 1330841835}
   - 212: {fileID: 1330841836}
   m_Layer: 0
-  m_Name: C
+  m_Name: C-button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2669,7 +2864,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1609292759}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!212 &1330841836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2850,7 +3045,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1393618467}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: timerBarParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2868,7 +3063,7 @@ Transform:
   m_Children:
   - {fileID: 2064055038}
   m_Father: {fileID: 1609292759}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1445435614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,7 +3214,7 @@ GameObject:
   - 4: {fileID: 1476091211}
   - 212: {fileID: 1476091212}
   m_Layer: 0
-  m_Name: B
+  m_Name: B-button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3036,7 +3231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1609292759}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!212 &1476091212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3357,7 +3552,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1609292759}
   m_Layer: 0
-  m_Name: Pattern Input
+  m_Name: Pattern Input UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3370,14 +3565,16 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1609292758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -198, y: 11.581392, z: 0}
+  m_LocalPosition: {x: -173, y: 11.581392, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 33287735}
   - {fileID: 1951892458}
   - {fileID: 1476091211}
   - {fileID: 1330841835}
   - {fileID: 1393618467}
+  - {fileID: 596957994}
+  - {fileID: 63881968}
+  - {fileID: 1323782028}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &1659379541
@@ -4090,7 +4287,7 @@ GameObject:
   - 4: {fileID: 1951892458}
   - 212: {fileID: 1951892459}
   m_Layer: 0
-  m_Name: A
+  m_Name: A-button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4107,7 +4304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1609292759}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!212 &1951892459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4224,7 +4421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2064055038
 Transform:
   m_ObjectHideFlags: 0
