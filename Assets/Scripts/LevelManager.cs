@@ -22,9 +22,6 @@ public class LevelManager : MonoBehaviour
     // The slots of the patterns for this level (1-3)
     public DancePattern[] patternSlots = null;
 
-    // The timer bar to pulsate
-    public GameObject timerBar = null;
-
     //  The dancer that represents Romeo
     public Dancer dancerRomeo = null;
 
@@ -34,10 +31,10 @@ public class LevelManager : MonoBehaviour
     Dancer[] dancers = null;
 
     // The index of the current pattern playing
-    int currentPatternIndex = 0;
+    public int currentPatternIndex = 0;
 
     // The index of the next pattern to select
-    int nextPatternIndex = -1;
+    public int nextPatternIndex = -1;
 
     // Link to the sequencer
     Sequencer sequencer = null;
@@ -62,9 +59,6 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        // Update timer bar
-        timerBar.transform.localScale = new Vector3( sequencer.GetBeatPercentage(), 1, 1 );
-
         // Process input
         if( Input.GetKeyDown( KeyCode.A ) )
             nextPatternIndex = 0;
@@ -76,13 +70,13 @@ public class LevelManager : MonoBehaviour
         // Update UI highlighting
         for( int i = 0; i < patternSlots.Length; i++ )
         {
-            SpriteRenderer spriteRenderer = patternSlots[i].GetComponent<SpriteRenderer>();
+            /*SpriteRenderer spriteRenderer = patternSlots[i].GetComponent<SpriteRenderer>();
             if( i == currentPatternIndex )
                 spriteRenderer.color = Color.green;
             else if( i == nextPatternIndex )
                 spriteRenderer.color = Color.red;
             else
-                spriteRenderer.color = Color.white;
+                spriteRenderer.color = Color.white;*/
         }
 
 

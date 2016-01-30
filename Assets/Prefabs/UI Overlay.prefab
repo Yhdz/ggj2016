@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.71239, y: 19.354053, z: 6}
+  m_LocalPosition: {x: -36.712402, y: 19.35405, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,13 +40,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sidebars: {fileID: 2800000, guid: fafb2e25cfcef40c79d2df711d2b6a27, type: 3}
+  julietPortrait: {fileID: 2800000, guid: 520c1763953919a4bbeede4eb6f00bdc, type: 3}
   julietHealthBarFrame: {fileID: 2800000, guid: 79f7c9afc55499f4bb48b53bd2c9aeb5,
     type: 3}
   julietHealthBarFill: {fileID: 2800000, guid: 9d1f3d1ef25e0b845bb6f078ac39cb66, type: 3}
   patternFrame1: {fileID: 2800000, guid: c4ed3bcf49308ef45b6900409c6c511b, type: 3}
   patternFrame2: {fileID: 2800000, guid: 6a255ce11618c1a49b3a4588114bf66f, type: 3}
   patternFrame3: {fileID: 2800000, guid: af7b05f1adcac114ca846665c9b71220, type: 3}
-  health: 1
+  patternIcon1: {fileID: 2800000, guid: f2eb22577f1e44ac1afcaff9eb63483e, type: 3}
+  patternIcon2: {fileID: 2800000, guid: d4cfb93f699364b8c8a4313bc96319bf, type: 3}
+  patternIcon3: {fileID: 2800000, guid: 7f87ea0b6c9664b25a0632dde0f86c75, type: 3}
+  health: 0.81
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
