@@ -1447,6 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPattern: {fileID: 0}
+  spriteAnimation: []
 --- !u!1 &833809949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,7 +3866,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1818526574}
   - 212: {fileID: 1818526573}
-  - 95: {fileID: 1818526572}
   - 114: {fileID: 1818526571}
   m_Layer: 0
   m_Name: romeo
@@ -3886,23 +3886,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPattern: {fileID: 0}
---- !u!95 &1818526572
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1818526570}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 37098620ad2d706469a2308202a25730, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  spriteAnimation:
+  - {fileID: 21300000, guid: 2750acce4fff54e7da70d1ffd92f3686, type: 3}
+  - {fileID: 21300000, guid: 88d698efdfa744038b8f33b4baf3a506, type: 3}
+  - {fileID: 21300000, guid: 63faa47b6be8041edad218922a207558, type: 3}
+  - {fileID: 21300000, guid: 88d698efdfa744038b8f33b4baf3a506, type: 3}
 --- !u!212 &1818526573
 SpriteRenderer:
   m_ObjectHideFlags: 0
