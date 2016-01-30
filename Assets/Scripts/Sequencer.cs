@@ -13,6 +13,8 @@ public class Sequencer : MonoBehaviour {
 	private List<AudioClip> audioSequences = new List<AudioClip>();
 	public int previousBeat = -1;
 	public int previousMeasure = -1;
+	public float beatPercentage = 0.0f;
+	public float measurePercentage = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +51,14 @@ public class Sequencer : MonoBehaviour {
 		return previousMeasure != CurrentMeasure;
 	}
 
+	public float GetBeatPercentage(){
+		return beatPercentage;
+	}
+
+	public float GetMeasurePercentage(){
+		return measurePercentage;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		UpdateTiming ();
@@ -64,6 +74,8 @@ public class Sequencer : MonoBehaviour {
 		TimeRunning += Time.deltaTime;
 		CurrentBeat = ((int)Mathf.Floor (TimeRunning / beatDuration)) % MeasureLength;
 		CurrentMeasure = ((int)Mathf.Floor (TimeRunning / beatDuration)) / 3;
+		beatPercentage = Mathf.Repeat (TimeRunning, beatDuration);
+		measurePercentage = Mathf.Repeat (TimeRunning, beatDuration * MeasureLength);
 	}
 
 	void UpdateSounds() {
