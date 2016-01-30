@@ -16,7 +16,7 @@ public class Sequencer : MonoBehaviour {
 	public int previousMeasure = -1;
 	public float beatPercentage = 0.0f;
 	public float measurePercentage = 0.0f;
-	private AudioSource audio;
+	private new AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
