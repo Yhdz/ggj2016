@@ -68,7 +68,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         // Update timer bar
-        //timerBar.transform.localScale = new Vector3( sequencer.GetBeatPercentage(), 1, 1 );
+        timerBar.transform.localScale = new Vector3( sequencer.GetBeatPercentage(), 1, 1 );
 
         // Process input
         if( Input.GetKeyDown( KeyCode.A ) )
