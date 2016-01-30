@@ -46,6 +46,7 @@ public class Dancer : MonoBehaviour
         int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize + 0.5f );
         int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize + 0.5f );
         transitionStartPosition = new Vector3( mapOffset.x + mapTileSize * i, mapOffset.y + mapTileSize * j, transform.position.z );
+		transitionEndPosition = transitionStartPosition;
     }
 
     public void Update()
@@ -61,8 +62,7 @@ public class Dancer : MonoBehaviour
             // Proceed to the next move in the current dance pattern and take it's movement vector
             if( currentPattern != null )
             {
-                currentPattern.NextMove();
-                Vector2 currentMove = mapTileSize * currentPattern.GetCurrentMove();
+				Vector2 currentMove = mapTileSize * currentPattern.GetMove(sequencer.CurrentBeat);
                 transitionEndPosition = transitionStartPosition + new Vector3( currentMove.x, currentMove.y, transitionStartPosition.z );
             }
             else
@@ -79,7 +79,7 @@ public class Dancer : MonoBehaviour
         }
 
         // Use the set animation curve to apply the transition to the next position
-        float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurrentCurve().Evaluate( sequencer.GetBeatPercentage() );
+		float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve(sequencer.CurrentBeat).Evaluate( sequencer.GetBeatPercentage() );
         Vector3 animationState = Vector3.Lerp( transitionStartPosition, transitionEndPosition, animationProgress );
         transform.position = new Vector3( animationState.x, animationState.y, transitionStartPosition.z );
     }
