@@ -50,10 +50,6 @@ public class Dancer : MonoBehaviour
 
     public void Update()
     {
-        // Only update when a dance pattern is available
-        if( currentPattern == null )
-            return;
-        
         // Update position to move to when the beat has passed
         if( sequencer.IsBeatChangeFrame() )
         {
@@ -63,9 +59,16 @@ public class Dancer : MonoBehaviour
             transitionStartPosition = new Vector3( mapOffset.x + mapTileSize * i, mapOffset.y + mapTileSize * j, transform.position.z );
 
             // Proceed to the next move in the current dance pattern and take it's movement vector
-            currentPattern.NextMove();
-            Vector2 currentMove = mapTileSize * currentPattern.GetCurrentMove();
-            transitionEndPosition = transitionStartPosition + new Vector3(currentMove.x,currentMove.y,0.0f);
+            if( currentPattern != null )
+            {
+                currentPattern.NextMove();
+                Vector2 currentMove = mapTileSize * currentPattern.GetCurrentMove();
+                transitionEndPosition = transitionStartPosition + new Vector3( currentMove.x, currentMove.y, transitionStartPosition.z );
+            }
+            else
+            {
+                transitionEndPosition = transitionStartPosition;
+            }
 
             // Update sprite animation if available
             if( spriteAnimation != null )
@@ -76,7 +79,8 @@ public class Dancer : MonoBehaviour
         }
 
         // Use the set animation curve to apply the transition to the next position
-        transform.position = Vector3.Lerp( transitionStartPosition, transitionEndPosition, 
-            currentPattern.GetCurrentCurve().Evaluate( sequencer.GetBeatPercentage() ) );
+        float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurrentCurve().Evaluate( sequencer.GetBeatPercentage() );
+        Vector3 animationState = Vector3.Lerp( transitionStartPosition, transitionEndPosition, animationProgress );
+        transform.position = new Vector3( animationState.x, animationState.y, transitionStartPosition.z );
     }
 }

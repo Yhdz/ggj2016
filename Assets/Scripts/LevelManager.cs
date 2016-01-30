@@ -18,11 +18,13 @@ public class LevelManager : MonoBehaviour
     // The map height
     public int mapHeight = 6;
     
-
+    // The slots of the patterns for this level (1-3)
     public DancePattern[] patternSlots = null;
 
+    // The timer bar to pulsate
     public GameObject timerBar = null;
 
+    //  The dancer that represents Romeo
     public Dancer dancerRomeo = null;
 
     // The map of floor tiles
@@ -31,10 +33,13 @@ public class LevelManager : MonoBehaviour
     // The dancers in the level
     Dancer[] dancers = null;
 
+    // The index of the current pattern playing
     int currentPatternIndex = 0;
 
+    // The index of the next pattern to select
     int nextPatternIndex = -1;
 
+    // Link to the sequencer
     Sequencer sequencer = null;
 
     /**
@@ -42,6 +47,7 @@ public class LevelManager : MonoBehaviour
      */
     void Start()
     {
+        // Fetch sequencer
         sequencer = GetComponent<Sequencer>();
 
         // Collect all tiles in the scene and map them onto the map structure
@@ -91,6 +97,7 @@ public class LevelManager : MonoBehaviour
         }
 
 
+        // Move to next pattern if a different one is selected
         if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
         {
             currentPatternIndex = nextPatternIndex;
