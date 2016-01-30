@@ -43,6 +43,7 @@ GameObject:
   - 114: {fileID: 11406560}
   - 50: {fileID: 5031656}
   - 61: {fileID: 6101798}
+  - 114: {fileID: 11407178}
   m_Layer: 0
   m_Name: romeo
   m_TagString: Untagged
@@ -422,6 +423,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
   - {fileID: 21300000, guid: c59b39539b9f9c843a6db99b236f3f37, type: 3}
   - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
+--- !u!114 &11407178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11423694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,9 +457,6 @@ MonoBehaviour:
   JulietteHappiness: 0.5
   currentPatternIndex: 0
   nextPatternIndex: -1
-  sortZOrderObjects:
-  - {fileID: 141018}
-  - {fileID: 0}
 --- !u!114 &11428632
 MonoBehaviour:
   m_ObjectHideFlags: 1
