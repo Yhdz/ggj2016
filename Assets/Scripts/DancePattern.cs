@@ -8,27 +8,13 @@ public class DancePattern : MonoBehaviour
 
     public AnimationCurve[] curves;
 
-    public int currentIndex = -1;
-
-    public int previousIndex = -1;
-
-    public void Update()
+	public Vector2 GetMove(int beat)
     {
-        previousIndex = currentIndex;
+		return moves[beat];
     }
 
-    public Vector2 GetCurrentMove()
+	public AnimationCurve GetCurve(int beat)
     {
-        return moves[currentIndex];
-    }
-
-    public AnimationCurve GetCurrentCurve()
-    {
-        return curves[currentIndex];
-    }
-
-    public void NextMove()
-    {
-        currentIndex = (currentIndex + 1) % moves.Length;
+        return curves[beat];
     }
 }

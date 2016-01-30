@@ -71,16 +71,17 @@ public class Sequencer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateTiming ();
-		UpdateSounds ();
+	}
+
+	void LateUpdate() {		
+		previousBeat = CurrentBeat;
+		previousMeasure = CurrentMeasure;
 	}
 
 	private void UpdateTiming() {
 		if (!IsRunning) {
 			return;
 		}
-
-		previousBeat = CurrentBeat;
-		previousMeasure = CurrentMeasure;
 
 		float beatDuration = 60.0f / BeatsPerMinute;
 
@@ -89,8 +90,5 @@ public class Sequencer : MonoBehaviour {
 		CurrentMeasure = ((int)Mathf.Floor (TimeRunning / beatDuration)) / 3;
 		beatPercentage = Mathf.Repeat (TimeRunning, beatDuration) / beatDuration;
 		measurePercentage = Mathf.Repeat (TimeRunning, beatDuration * MeasureLength) / (beatDuration* MeasureLength);
-	}
-
-	void UpdateSounds() {
 	}
 }

@@ -102,6 +102,7 @@ public class LevelManager : MonoBehaviour
         if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
         {
             currentPatternIndex = nextPatternIndex;
+
             dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
         }
     }
