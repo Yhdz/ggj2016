@@ -53,7 +53,7 @@ public class Dancer : MonoBehaviour
 		position = new Vector2 (i, j);
 		Vector2 scenePosition = mapOffset + mapTileSize * position;
 
-		transitionStartPosition = new Vector3( mapOffset.x + mapTileSize * position.x, mapOffset.y + mapTileSize * position.y, transform.position.z );
+		transitionStartPosition = new Vector3( scenePosition.x, scenePosition.y, transform.position.z );
 		transitionEndPosition = transitionStartPosition;
 	}
 
@@ -77,6 +77,9 @@ public class Dancer : MonoBehaviour
 					position = newPosition;
 					Vector2 newScenePosition = mapOffset + mapTileSize * position;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
+
+					// decrease Juliette happyiness
+					levelManager.JulietteHappiness = Mathf.Max(levelManager.JulietteHappiness - 0.1f, 0.0f);
 				}
 				else {
 					transitionEndPosition = transitionStartPosition;
@@ -94,6 +97,10 @@ public class Dancer : MonoBehaviour
                 spriteRenderer.sprite = spriteAnimation[currentSpriteIndex];
             }
         }
+
+		if (sequencer.IsMeasureChangeFrame ()) {
+			levelManager.JulietteHappiness = Mathf.Min(levelManager.JulietteHappiness + 0.05f, 1.0f);
+		}
 
         // Use the set animation curve to apply the transition to the next position
 		float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve(sequencer.CurrentBeat).Evaluate( sequencer.GetBeatPercentage() );

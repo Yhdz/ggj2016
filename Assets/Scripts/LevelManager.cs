@@ -28,8 +28,7 @@ public class LevelManager : MonoBehaviour
     //  The dancer that represents Romeo
     public Dancer dancerRomeo = null;
 
-    // The map of floor tiles
-    FloorTile[,] floorMap = null;
+	public float JulietteHappiness = 0.5f;
 
     // The dancers in the level
     Dancer[] dancers = null;
@@ -50,17 +49,6 @@ public class LevelManager : MonoBehaviour
     {
         // Fetch sequencer
         sequencer = GetComponent<Sequencer>();
-
-        // Collect all tiles in the scene and map them onto the map structure
-        FloorTile[] floorTiles = GameObject.FindObjectsOfType<FloorTile>();
-        floorMap = new FloorTile[mapWidth,mapHeight];
-        foreach( FloorTile floorTile in floorTiles )
-        {
-            int i = Mathf.FloorToInt( (floorTile.transform.position.x - offset.x) / tileSize + 0.5f );
-            int j = Mathf.FloorToInt( (floorTile.transform.position.y - offset.y) / tileSize + 0.5f );
-
-            floorMap[i, j] = floorTile;
-        }
 
         // Collect all dancers
         dancers = GameObject.FindObjectsOfType<Dancer>();
