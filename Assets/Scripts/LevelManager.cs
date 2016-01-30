@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
 	private UIOverlay uiOverlay = null;
 
     // Z-sort list
-    public GameObject[] sortZOrderObjects = null;
+    SortForZOrder[] sortZOrderObjects = null;
 
     /**
      * Starts the level.
@@ -56,6 +56,9 @@ public class LevelManager : MonoBehaviour
         dancers = GameObject.FindObjectsOfType<Dancer>();
         if( dancers == null )
             Debug.Log( "Warning: no dancers defined in scene!" );
+
+        // Fetch all objects marked with z-order script
+        sortZOrderObjects = GameObject.FindObjectsOfType<SortForZOrder>();
 
         // Get pattern from current slot and apply to romeo
         dancerRomeo.currentPattern = patternSlots[0];
@@ -119,8 +122,8 @@ public class YPositionSorter : IComparer
 {
     int IComparer.Compare( System.Object x, System.Object y )
     {
-        GameObject a = (GameObject)x;
-        GameObject b = (GameObject)y;
+        GameObject a = ((Component)x).gameObject;
+        GameObject b = ((Component)y).gameObject;
 
         if ( a.transform.position.y != b.transform.position.y )
             return (int)(b.transform.position.y - a.transform.position.y);
