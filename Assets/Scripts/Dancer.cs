@@ -15,6 +15,8 @@ public class Dancer : MonoBehaviour
     // The index of the sprite animation
     int currentSpriteIndex = 0;
 
+	Vector2 position;
+
     // Start position of the current transition
     Vector3 transitionStartPosition;
 
@@ -33,21 +35,27 @@ public class Dancer : MonoBehaviour
     // The sprite renderer
     SpriteRenderer spriteRenderer = null;
 
+	private LevelManager levelManager = null;
+
     void Start()
     {
         // Fetch some of the objects for future use
         GameObject camera = GameObject.Find( "Main Camera" );
-        mapTileSize = camera.GetComponent<LevelManager>().tileSize;
-        mapOffset = camera.GetComponent<LevelManager>().offset;
+		levelManager = camera.GetComponent<LevelManager> ();
+		mapTileSize = levelManager.tileSize;
+		mapOffset = levelManager.offset;
         sequencer = camera.GetComponent<Sequencer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Update the start position from current position by matching it to the grid
-        int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize + 0.5f );
-        int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize + 0.5f );
-        transitionStartPosition = new Vector3( mapOffset.x + mapTileSize * i, mapOffset.y + mapTileSize * j, transform.position.z );
+        int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize );
+        int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize );
+		position = new Vector2 (i, j);
+		Vector2 scenePosition = mapOffset + mapTileSize * position;
+
+		transitionStartPosition = new Vector3( mapOffset.x + mapTileSize * position.x, mapOffset.y + mapTileSize * position.y, transform.position.z );
 		transitionEndPosition = transitionStartPosition;
-    }
+	}
 
     public void Update()
     {
@@ -55,15 +63,24 @@ public class Dancer : MonoBehaviour
         if( sequencer.IsBeatChangeFrame() )
         {
             // Update the start position from current position by matching it to the grid
-            int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize + 0.5f );
-            int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize + 0.5f );
-            transitionStartPosition = new Vector3( mapOffset.x + mapTileSize * i, mapOffset.y + mapTileSize * j, transform.position.z );
+			Vector2 startScenePosition = mapOffset + mapTileSize * position;
+			transitionStartPosition = new Vector3( startScenePosition.x, startScenePosition.y, transform.position.z );
 
             // Proceed to the next move in the current dance pattern and take it's movement vector
             if( currentPattern != null )
             {
-				Vector2 currentMove = mapTileSize * currentPattern.GetMove(sequencer.CurrentBeat);
-                transitionEndPosition = transitionStartPosition + new Vector3( currentMove.x, currentMove.y, transitionStartPosition.z );
+				Vector2 currentMove = currentPattern.GetMove(sequencer.CurrentBeat);
+				Vector2 newPosition = position + currentMove;
+
+				// test if new move is outside of field
+				if (levelManager.IsPositionInField((int)newPosition.x, (int)newPosition.y)) {
+					position = newPosition;
+					Vector2 newScenePosition = mapOffset + mapTileSize * position;
+					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
+				}
+				else {
+					transitionEndPosition = transitionStartPosition;
+				}
             }
             else
             {

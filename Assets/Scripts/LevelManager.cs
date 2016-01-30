@@ -124,4 +124,13 @@ public class LevelManager : MonoBehaviour
 
 		UnityEngine.SceneManagement.SceneManager.LoadScene ("DanceLevel");
 	}
+
+	public bool IsPositionInField(int x, int y)
+	{
+		if (x >= 0 && x < mapWidth && y >= 0 && y < mapHeight) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
