@@ -40,13 +40,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sidebars: {fileID: 2800000, guid: fafb2e25cfcef40c79d2df711d2b6a27, type: 3}
+  julietPortrait: {fileID: 2800000, guid: 520c1763953919a4bbeede4eb6f00bdc, type: 3}
   julietHealthBarFrame: {fileID: 2800000, guid: 79f7c9afc55499f4bb48b53bd2c9aeb5,
     type: 3}
   julietHealthBarFill: {fileID: 2800000, guid: 9d1f3d1ef25e0b845bb6f078ac39cb66, type: 3}
   patternFrame1: {fileID: 2800000, guid: c4ed3bcf49308ef45b6900409c6c511b, type: 3}
   patternFrame2: {fileID: 2800000, guid: 6a255ce11618c1a49b3a4588114bf66f, type: 3}
   patternFrame3: {fileID: 2800000, guid: af7b05f1adcac114ca846665c9b71220, type: 3}
-  health: 1
+  health: 0.81
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
