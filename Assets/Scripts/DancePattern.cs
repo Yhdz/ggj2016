@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class DancePattern
+public class DancePattern : MonoBehaviour
 {
     public Vector2[] pattern;
 

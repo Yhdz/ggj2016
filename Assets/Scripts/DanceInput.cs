@@ -92,6 +92,11 @@ public class DanceInput : MonoBehaviour
 		return sequences[currentSequence];
 	}
 
+    public int GetCurrentSequenceIndex()
+    {
+        return currentSequence;
+    }
+
 	/// <summary>
 	/// 	Checks the input to set the next sequence in the 'queue'
 	/// </summary>

@@ -23,12 +23,21 @@ public class LevelManager : MonoBehaviour
 
     // The current timer towards the next beat
     float beatTimer = 0.0f;
+    
+
+    public DancePattern[] patternSlots = null;
+
+    public Dancer dancerRomeo = null;
 
     // The map of floor tiles
     FloorTile[,] floorMap = null;
 
     // The dancers in the level
     Dancer[] dancers = null;
+
+    int currentPatternIndex = 0;
+
+    int nextPatternIndex = -1;
 
     /**
      * Starts the level.
@@ -47,13 +56,37 @@ public class LevelManager : MonoBehaviour
         }
 
         // Collect all dancers
-        Dancer[] dancers = GameObject.FindObjectsOfType<Dancer>();
+        dancers = GameObject.FindObjectsOfType<Dancer>();
         if( dancers == null )
             Debug.Log( "Warning: no dancers defined in scene!" );
+
+        // Get pattern from current slot and apply to romeo
+        dancerRomeo.currentPattern = patternSlots[0];
+
     }
 
     void Update()
     {
+        // Process input
+        if( Input.GetKeyDown( KeyCode.A ) )
+            nextPatternIndex = 0;
+        if( Input.GetKeyDown( KeyCode.S ) )
+            nextPatternIndex = 1;
+        if( Input.GetKeyDown( KeyCode.D ) )
+            nextPatternIndex = 2;
+
+        // Update UI highlighting
+        for( int i = 0; i < patternSlots.Length; i++ )
+        {
+            SpriteRenderer spriteRenderer = patternSlots[i].GetComponent<SpriteRenderer>();
+            if( i == currentPatternIndex )
+                spriteRenderer.color = Color.green;
+            else if( i == nextPatternIndex )
+                spriteRenderer.color = Color.red;
+            else
+                spriteRenderer.color = Color.white;
+        }
+
         // Update beat timer
         beatTimer += Time.deltaTime;
         if ( beatTimer > beatInterval )
@@ -61,12 +94,19 @@ public class LevelManager : MonoBehaviour
             // Update beat
             beatTimer -= beatInterval;
 
+            // TODO: if bar is finished:
+            if( nextPatternIndex != -1 )
+            {
+                currentPatternIndex = nextPatternIndex;
+                dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
+            }
+
             // Update dancers
             foreach( Dancer dancer in dancers )
             {
-                dancer.Move();
+                dancer.Move( tileSize );
             }
         }
     }
-    
+
 }

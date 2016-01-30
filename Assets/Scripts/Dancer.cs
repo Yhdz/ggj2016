@@ -3,12 +3,15 @@ using System.Collections;
 
 public class Dancer : MonoBehaviour
 {
-    DancePattern currentPattern;
+    public DancePattern currentPattern = null;
 
-    public void Move()
+    public void Move( float tileSize )
     {
-        Vector2 position = new Vector2( transform.position.x, transform.position.y );
-        position += currentPattern.GetCurrentMove();
+        if( currentPattern == null )
+            return;
+
+        Vector2 move = currentPattern.GetCurrentMove();
+        transform.Translate( tileSize * move.x, tileSize * move.y, 0.0f );
         currentPattern.NextMove();
     }
 }
