@@ -17,15 +17,11 @@ public class LevelManager : MonoBehaviour
 
     // The map height
     public int mapHeight = 6;
-
-    // The interval between two beats
-    public float beatInterval = 0.5f;
-
-    // The current timer towards the next beat
-    float beatTimer = 0.0f;
     
 
     public DancePattern[] patternSlots = null;
+
+    public GameObject timerBar = null;
 
     public Dancer dancerRomeo = null;
 
@@ -39,11 +35,15 @@ public class LevelManager : MonoBehaviour
 
     int nextPatternIndex = -1;
 
+    Sequencer sequencer = null;
+
     /**
      * Starts the level.
      */
     void Start()
     {
+        sequencer = GetComponent<Sequencer>();
+
         // Collect all tiles in the scene and map them onto the map structure
         FloorTile[] floorTiles = GameObject.FindObjectsOfType<FloorTile>();
         floorMap = new FloorTile[mapWidth,mapHeight];
@@ -67,6 +67,9 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        // Update timer bar
+        //timerBar.transform.localScale = new Vector3( sequencer.GetBeatPercentage(), 1, 1 );
+
         // Process input
         if( Input.GetKeyDown( KeyCode.A ) )
             nextPatternIndex = 0;
@@ -87,26 +90,19 @@ public class LevelManager : MonoBehaviour
                 spriteRenderer.color = Color.white;
         }
 
-        // Update beat timer
-        beatTimer += Time.deltaTime;
-        if ( beatTimer > beatInterval )
+        if( sequencer.IsBeatChangeFrame() )
         {
-            // Update beat
-            beatTimer -= beatInterval;
-
-            // TODO: if bar is finished:
-            if( nextPatternIndex != -1 )
-            {
-                currentPatternIndex = nextPatternIndex;
-                dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
-            }
-
             // Update dancers
             foreach( Dancer dancer in dancers )
             {
                 dancer.Move( tileSize );
             }
+
+            if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
+            {
+                currentPatternIndex = nextPatternIndex;
+                dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
+            }
         }
     }
-
 }

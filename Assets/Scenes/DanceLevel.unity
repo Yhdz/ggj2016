@@ -200,7 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: []
+  pattern:
+  - {x: 1, y: 0}
+  - {x: 0, y: -1}
+  - {x: 1, y: 0}
   currentIndex: 0
 --- !u!1 &218756863
 GameObject:
@@ -305,6 +308,11 @@ MonoBehaviour:
   mapWidth: 7
   mapHeight: 7
   beatInterval: 0.5
+  patternSlots:
+  - {fileID: 596957996}
+  - {fileID: 63881970}
+  - {fileID: 1323782030}
+  dancerRomeo: {fileID: 421059840}
 --- !u!1 &229881201
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f7a427cd1f02845a819c8cb382fa30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPattern: {fileID: 0}
 --- !u!1 &510913802
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pattern:
   - {x: -1, y: 0}
-  - {x: 0, y: -1}
+  - {x: 0, y: 1}
   - {x: -1, y: 0}
   currentIndex: 0
 --- !u!1 &636086217
@@ -1361,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f7a427cd1f02845a819c8cb382fa30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPattern: {fileID: 0}
 --- !u!1 &833809949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,7 +2638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: []
+  pattern:
+  - {x: 0, y: 2}
+  - {x: -1, y: 0}
   currentIndex: 0
 --- !u!1 &1330841834
 GameObject:
@@ -4212,7 +4224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2064055038
 Transform:
   m_ObjectHideFlags: 0
