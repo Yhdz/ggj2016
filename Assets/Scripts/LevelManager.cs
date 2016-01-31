@@ -6,6 +6,11 @@ using System.Collections;
  */
 public class LevelManager : MonoBehaviour
 {
+    public enum BadEffectType
+    {
+        HappinessDec,
+    };
+
     // The size of one tile in world units
     public float tileSize = 36.0f;
 
@@ -44,6 +49,8 @@ public class LevelManager : MonoBehaviour
 
     // Z-sort list
     SortForZOrder[] sortZOrderObjects = null;
+
+    public BadEffectType badEffect = BadEffectType.HappinessDec;
 
     /**
      * Starts the level.
@@ -92,15 +99,15 @@ public class LevelManager : MonoBehaviour
         uiOverlay.health = Mathf.Clamp01(JulietteHappiness);
     }
 
-    public void LoseHappiness( Dancer dancer )
+    public void BadStuffHappened( Dancer dancer )
     {
-        if( dancer == dancerRomeo )
+        if( dancer == dancerRomeo && badEffect == BadEffectType.HappinessDec )
         {
             JulietteHappiness -= julietteHappinessChunk;
             if ( JulietteHappiness <= 0.0f )
                 StartCoroutine( EndGameSequence() );
         }
-        }
+    }
 
 	public void OnDestinationReached()
 	{
