@@ -206,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 900, y: 200, z: 0}
+  m_LocalPosition: {x: 300, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470878}
@@ -382,7 +382,7 @@ MonoBehaviour:
   CurrentMeasure: 0
   IsRunning: 0
   TimeRunning: 0
-  BackgroundMusic: {fileID: 8300000, guid: 4aee5c294f7654c768a1b67740c557db, type: 3}
+  BackgroundMusic: {fileID: 8300000, guid: a9b9d74d9b8824488b748595711e3b68, type: 3}
   previousBeat: -1
   previousMeasure: -1
   beatPercentage: 0
@@ -696,6 +696,8 @@ MonoBehaviour:
   patternIcon1: {fileID: 2800000, guid: f2eb22577f1e44ac1afcaff9eb63483e, type: 3}
   patternIcon2: {fileID: 2800000, guid: d4cfb93f699364b8c8a4313bc96319bf, type: 3}
   patternIcon3: {fileID: 2800000, guid: 7f87ea0b6c9664b25a0632dde0f86c75, type: 3}
+  fadeoutTexture: {fileID: 2800000, guid: 12b5980b602214b2ca503dae407a059c, type: 3}
+  fadeoutValue: 1
   health: 0.81
   doDrawHealthBar: 1
 --- !u!124 &12485666
