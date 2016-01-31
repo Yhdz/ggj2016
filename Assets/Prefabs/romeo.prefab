@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &106360
+--- !u!1 &104390
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 460386}
+  - 4: {fileID: 475816}
   m_Layer: 0
   m_Name: Patterns
   m_TagString: Untagged
@@ -15,17 +15,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &136162
+--- !u!1 &137834
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 460378}
-  - 114: {fileID: 11499542}
+  - 4: {fileID: 480820}
+  - 114: {fileID: 11437560}
   m_Layer: 0
-  m_Name: patternSlotA
+  m_Name: patternSlotB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,6 @@ GameObject:
   - 50: {fileID: 5031656}
   - 61: {fileID: 6101798}
   - 114: {fileID: 11407178}
-  - 82: {fileID: 8204772}
   m_Layer: 0
   m_Name: romeo
   m_TagString: Untagged
@@ -52,17 +51,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &142362
+--- !u!1 &142664
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 498840}
-  - 114: {fileID: 11444942}
+  - 4: {fileID: 402984}
+  - 114: {fileID: 11418612}
   m_Layer: 0
-  m_Name: patternSlotC
+  m_Name: patternSlotA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,17 +83,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &180438
+--- !u!1 &185860
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 431240}
-  - 114: {fileID: 11440764}
+  - 4: {fileID: 447436}
+  - 114: {fileID: 11411052}
   m_Layer: 0
-  m_Name: patternSlotB
+  m_Name: patternSlotC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,45 +122,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &431240
+--- !u!4 &402984
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -273, y: 41.58139, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 460386}
-  m_RootOrder: 1
---- !u!4 &460378
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136162}
+  m_GameObject: {fileID: 142664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -301, y: 41.58139, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 460386}
+  m_Father: {fileID: 475816}
   m_RootOrder: 0
---- !u!4 &460386
+--- !u!4 &447436
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106360}
+  m_GameObject: {fileID: 185860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -245, y: 41.58139, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 460378}
-  - {fileID: 431240}
-  - {fileID: 498840}
-  m_Father: {fileID: 470878}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 475816}
+  m_RootOrder: 2
 --- !u!4 &470878
 Transform:
   m_ObjectHideFlags: 1
@@ -172,9 +156,24 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 460386}
+  - {fileID: 475816}
   - {fileID: 479020}
   m_Father: {fileID: 481550}
+  m_RootOrder: 0
+--- !u!4 &475816
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 402984}
+  - {fileID: 480820}
+  - {fileID: 447436}
+  m_Father: {fileID: 470878}
   m_RootOrder: 0
 --- !u!4 &479020
 Transform:
@@ -187,6 +186,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470878}
+  m_RootOrder: 1
+--- !u!4 &480820
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -273, y: 41.58139, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 475816}
   m_RootOrder: 1
 --- !u!4 &481550
 Transform:
@@ -201,18 +212,6 @@ Transform:
   - {fileID: 470878}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &498840
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142362}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -245, y: 41.58139, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 460386}
-  m_RootOrder: 2
 --- !u!20 &2051856
 Camera:
   m_ObjectHideFlags: 1
@@ -222,7 +221,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.96470594, g: 0.7294118, b: 0.48235297, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -359,80 +358,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &8204772
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141018}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!92 &9298138
 Behaviour:
   m_ObjectHideFlags: 1
@@ -457,6 +382,7 @@ MonoBehaviour:
   CurrentMeasure: 0
   IsRunning: 0
   TimeRunning: 0
+  BackgroundMusic: {fileID: 8300000, guid: 4aee5c294f7654c768a1b67740c557db, type: 3}
   previousBeat: -1
   previousMeasure: -1
   beatPercentage: 0
@@ -500,9 +426,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  bounceSounds:
-  - {fileID: 8300000, guid: c843836052f634e0398a03378fdb52db, type: 3}
-  - {fileID: 8300000, guid: 709c014e8f4474ac1902521abaf87068, type: 3}
+  bounceSounds: []
 --- !u!114 &11407178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -514,6 +438,138 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11411052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moves:
+  - {x: 1, y: 0}
+  - {x: -1, y: 1}
+  - {x: -2, y: -1}
+  curves:
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.24912669
+      value: 0.6027857
+      inSlope: 1.4998019
+      outSlope: 1.4998019
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &11418612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moves:
+  - {x: 0, y: 1}
+  - {x: 1, y: 0}
+  - {x: -1, y: -2}
+  curves:
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.26117963
+      value: 0.64294535
+      inSlope: 1.4993548
+      outSlope: 1.4993548
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11423694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,9 +586,9 @@ MonoBehaviour:
   mapWidth: 12
   mapHeight: 10
   patternSlots:
-  - {fileID: 11499542}
-  - {fileID: 11440764}
-  - {fileID: 11444942}
+  - {fileID: 11418612}
+  - {fileID: 11437560}
+  - {fileID: 11411052}
   dancerRomeo: {fileID: 11406560}
   JulietteHappiness: 1
   julietteHappinessChunk: 0.2
@@ -550,12 +606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39be4148434fcf49b4eed1690943c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11440764
+--- !u!114 &11437560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180438}
+  m_GameObject: {fileID: 137834}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
@@ -641,138 +697,7 @@ MonoBehaviour:
   patternIcon2: {fileID: 2800000, guid: d4cfb93f699364b8c8a4313bc96319bf, type: 3}
   patternIcon3: {fileID: 2800000, guid: 7f87ea0b6c9664b25a0632dde0f86c75, type: 3}
   health: 0.81
---- !u!114 &11444942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moves:
-  - {x: 1, y: 0}
-  - {x: -1, y: 1}
-  - {x: -2, y: -1}
-  curves:
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 0.24912669
-      value: 0.6027857
-      inSlope: 1.4998019
-      outSlope: 1.4998019
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &11499542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moves:
-  - {x: 0, y: 1}
-  - {x: 1, y: 0}
-  - {x: -1, y: -2}
-  curves:
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 0.26117963
-      value: 0.64294535
-      inSlope: 1.4993548
-      outSlope: 1.4993548
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  - serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  doDrawHealthBar: 1
 --- !u!124 &12485666
 Behaviour:
   m_ObjectHideFlags: 1
