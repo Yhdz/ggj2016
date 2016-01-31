@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 /**
@@ -124,8 +125,8 @@ public class LevelManager : MonoBehaviour
 
 		yield return new WaitForSeconds (2.0f);
 
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("DanceLevel");
-	}
+        SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
+    }
 
 	public bool IsPositionInField(int x, int y)
 	{
