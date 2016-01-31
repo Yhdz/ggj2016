@@ -1101,6 +1101,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &146010484 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158944, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+  m_PrefabInternal: {fileID: 682368459}
+--- !u!114 &146010485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146010484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &163510456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,6 +2777,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 900
@@ -2797,6 +2816,30 @@ Prefab:
     - target: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_Name
       value: RandomDancer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[0].value
+      value: -0.0026524067
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].time
+      value: 0.4970297
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].value
+      value: 0.48806372
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].value
+      value: -0.0026524067
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c80b652ab4db944489bb769634350e4a, type: 2}
@@ -5568,6 +5611,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.x
       value: 200
@@ -5604,6 +5651,30 @@ Prefab:
       propertyPath: currentPattern
       value: 
       objectReference: {fileID: 1538527275}
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[0].value
+      value: 0.0026525855
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].time
+      value: 0.4970297
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].value
+      value: 0.49336872
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].value
+      value: 0.0026525855
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
   m_IsPrefabParent: 0
@@ -6238,6 +6309,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 800
@@ -6269,6 +6344,30 @@ Prefab:
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[0].value
+      value: -0.0026524067
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].time
+      value: 0.5009901
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].value
+      value: 0.4986738
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].value
+      value: -0.0026524067
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c80b652ab4db944489bb769634350e4a, type: 2}
@@ -9965,6 +10064,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1100
@@ -10000,6 +10103,30 @@ Prefab:
     - target: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_Name
       value: RandomDancer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[0].value
+      value: 0.0026525855
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].time
+      value: 0.49900985
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].value
+      value: 0.49336872
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].value
+      value: 0.0026525855
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c80b652ab4db944489bb769634350e4a, type: 2}
@@ -10407,6 +10534,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1000
@@ -10442,6 +10573,30 @@ Prefab:
     - target: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_Name
       value: RandomDancer (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[0].value
+      value: -0.0026524067
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].time
+      value: 0.49504948
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[1].value
+      value: 0.4960213
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401282, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+      propertyPath: ErrorCurve.m_Curve.Array.data[2].value
+      value: -0.0026524067
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c80b652ab4db944489bb769634350e4a, type: 2}
