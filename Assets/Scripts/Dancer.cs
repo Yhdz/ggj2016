@@ -4,18 +4,14 @@
  * Dancer. Follows patterns and animates motion and sprite animation for dancers
  * like Romeo or NPC dancers.
  */
-public class Dancer : MonoBehaviour
+public class Dancer : SpriteAnimator
 {
     // The dance pattern the dancer is following
     public DancePattern currentPattern = null;
 
 	public AnimationCurve ErrorCurve = new AnimationCurve ();
 
-    // The sprite animation series the dancer follows
-    public Sprite[] spriteAnimation = null;
-
-    // The index of the sprite animation
-    int currentSpriteIndex = 0;
+    
 
 	Vector2 position;
 
@@ -31,11 +27,7 @@ public class Dancer : MonoBehaviour
     // Map offset taken from the level manager
     Vector2 mapOffset;
 
-    // The sequencer
-    Sequencer sequencer = null;
-
-    // The sprite renderer
-    SpriteRenderer spriteRenderer = null;
+    
 
 	private LevelManager levelManager = null;
 
@@ -51,6 +43,7 @@ public class Dancer : MonoBehaviour
         sequencer = camera.GetComponent<Sequencer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+
         // Update the start position from current position by matching it to the grid
         int i = Mathf.FloorToInt( (transform.position.x - mapOffset.x) / mapTileSize + 0.5f );
 		int j = Mathf.FloorToInt( (transform.position.y - mapOffset.y) / mapTileSize + 0.5f );
@@ -61,8 +54,10 @@ public class Dancer : MonoBehaviour
 		transitionEndPosition = transitionStartPosition;
 	}
 
-    public void Update()
+    public override void Update()
     {
+        base.Update();
+
         // Update position to move to when the beat has passed
         if( sequencer.IsBeatChangeFrame() )
         {
@@ -102,13 +97,7 @@ public class Dancer : MonoBehaviour
             {
                 transitionEndPosition = transitionStartPosition;
             }
-
-            // Update sprite animation if available
-            if( spriteAnimation != null )
-            {
-                currentSpriteIndex = (currentSpriteIndex + 1) % spriteAnimation.Length;
-                spriteRenderer.sprite = spriteAnimation[currentSpriteIndex];
-            }
+            
         }
 
 		
