@@ -116,13 +116,15 @@ public class Dancer : MonoBehaviour
 		if (!useErrorCurve) {
 			// Use the set animation curve to apply the transition to the next position
 			float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve (sequencer.CurrentBeat).Evaluate (sequencer.GetBeatPercentage ());
-			Vector3 animationState = Vector3.Lerp (transitionStartPosition, transitionEndPosition, animationProgress);
-			transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
+            Vector3 animationState = Vector3.Lerp( transitionStartPosition, transitionEndPosition, animationProgress );
+            spriteRenderer.flipX = animationState.x - transform.position.x > 0;
+            transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
 		} else {
 			// Use the set animation curve to apply the transition to the next position
 			float animationProgress = ErrorCurve.Evaluate (sequencer.GetBeatPercentage ());
 			Vector3 animationState = Vector3.Lerp (transitionStartPosition, transitionEndPosition, animationProgress);
-			transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
+            spriteRenderer.flipX = animationState.x - transform.position.x > 0;
+            transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
 		}
     }
 }
