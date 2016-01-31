@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class LevelDestination : MonoBehaviour {
+	public Color BlinkColor;
+
 	private LevelManager levelManager = null;
 	private Sequencer sequencer = null;
 
@@ -15,8 +17,8 @@ public class LevelDestination : MonoBehaviour {
 	void Update () {
 		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer> ();
 
-		float alphaColor = Mathf.Sin (Time.time * 2 * Mathf.PI * 1f) * 0.5f + 0.5f;
-		spriteRenderer.color = new Color (spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alphaColor);
+		float colorLerp = Mathf.Sin (Time.time * 2 * Mathf.PI * 1f) * 0.5f + 0.5f;
+		spriteRenderer.color = Color.Lerp (Color.white, BlinkColor, colorLerp);
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
