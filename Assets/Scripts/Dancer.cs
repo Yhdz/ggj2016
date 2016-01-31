@@ -11,7 +11,7 @@ public class Dancer : SpriteAnimator
 
 	public AnimationCurve ErrorCurve = new AnimationCurve ();
 
-    
+	public AudioClip[] bounceSounds = new AudioClip[0];
 
 	Vector2 position;
 
@@ -26,8 +26,6 @@ public class Dancer : SpriteAnimator
 
     // Map offset taken from the level manager
     Vector2 mapOffset;
-
-    
 
 	private LevelManager levelManager = null;
 
@@ -54,6 +52,16 @@ public class Dancer : SpriteAnimator
 		transitionEndPosition = transitionStartPosition;
 	}
 
+	public void PlayRandomBounceSound()
+	{
+		AudioSource source = GetComponent<AudioSource> ();
+		if (source != null && bounceSounds.Length > 0) {
+			int soundIndex = Random.Range (0, bounceSounds.Length);
+			AudioClip sound = bounceSounds [soundIndex];
+			source.PlayOneShot(sound);
+		}
+	}
+
     public override void Update()
     {
         base.Update();
@@ -78,12 +86,14 @@ public class Dancer : SpriteAnimator
 				RaycastHit2D hit = Physics2D.Linecast(startScenePosition, newScenePosition, mask);
 
 				// test if new move is outside of field
-				//if (levelManager.IsPositionInField((int)newPosition.x, (int)newPosition.y)) {
 				if (hit.collider == null) {
+					// no collision, walk to the new position
 					position = newPosition;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
 				}
 				else {
+					// collision with collider, bounce to wall
+
 					transitionEndPosition = transitionStartPosition;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
 
@@ -91,6 +101,8 @@ public class Dancer : SpriteAnimator
                     levelManager.BadStuffHappened(this);
 
 					useErrorCurve = true;
+
+					PlayRandomBounceSound ();
 				}
             }
             else
