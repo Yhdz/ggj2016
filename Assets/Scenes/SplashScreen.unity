@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenDuration: 10
-  nextScene: OpeningScene
+  nextScene: IntroLevel1
 --- !u!4 &1091566232
 Transform:
   m_ObjectHideFlags: 0
