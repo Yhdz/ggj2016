@@ -459,6 +459,7 @@ MonoBehaviour:
   julietteHappinessChunk: 0.2
   currentPatternIndex: 0
   nextPatternIndex: -1
+  badEffect: 0
 --- !u!114 &11426192
 MonoBehaviour:
   m_ObjectHideFlags: 1

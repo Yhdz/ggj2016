@@ -93,7 +93,7 @@ public class Dancer : MonoBehaviour
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
 
                     // decrease Juliette happyiness
-                    levelManager.LoseHappiness(this);
+                    levelManager.BadStuffHappened(this);
 
 					useErrorCurve = true;
 				}
