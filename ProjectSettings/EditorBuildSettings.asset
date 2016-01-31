@@ -6,4 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel1.unity
+  - enabled: 1
     path: Assets/Scenes/DanceLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel2.unity
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel3.unity
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel4.unity
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel5.unity
