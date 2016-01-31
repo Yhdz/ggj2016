@@ -22,6 +22,8 @@ public class UIOverlay : MonoBehaviour
 
     public float health = 0.75f;
 
+	public bool doDrawHealthBar = true;
+
     LevelManager levelManager;
 
     void Start()
@@ -35,9 +37,12 @@ public class UIOverlay : MonoBehaviour
 
         GUI.DrawTexture( new Rect( 0, 0, 1600, 900 ), sidebars );
 
-        GUI.DrawTexture( new Rect(35,35,117,114), julietPortrait );
-        GUI.DrawTexture( new Rect( 35, 220, 117, 597 ), julietHealthBarFrame );
-        GUI.DrawTextureWithTexCoords( new Rect( 35, 220 + (1.0f-health)*597, 117, health* 597 ), julietHealthBarFill, new Rect( 0, 0, 1, health ) );
+		if( doDrawHealthBar )
+		{
+	        GUI.DrawTexture( new Rect(35,35,117,114), julietPortrait );
+	        GUI.DrawTexture( new Rect( 35, 220, 117, 597 ), julietHealthBarFrame );
+	        GUI.DrawTextureWithTexCoords( new Rect( 35, 220 + (1.0f-health)*597, 117, health* 597 ), julietHealthBarFill, new Rect( 0, 0, 1, health ) );
+		}
 
         int cpi = levelManager.currentPatternIndex;
         int npi = levelManager.nextPatternIndex;
