@@ -265,7 +265,7 @@ MonoBehaviour:
   fadingDuration: 0.5
   fadingDelay: 2
   autoFade: 1
-  SceneName: DanceLevel2
+  SceneName: DanceLevel4
 --- !u!4 &1034084156
 Transform:
   m_ObjectHideFlags: 0
