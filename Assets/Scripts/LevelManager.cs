@@ -61,6 +61,8 @@ public class LevelManager : MonoBehaviour
         // Fetch sequencer
         sequencer = GetComponent<Sequencer>();
 		uiOverlay = GameObject.FindObjectOfType<UIOverlay>();
+		uiOverlay.fadeoutValue = 0.0f;
+		uiOverlay.StartFadeIn (0.5f);
 
         // Collect all dancers
         dancers = GameObject.FindObjectsOfType<Dancer>();
@@ -122,6 +124,7 @@ public class LevelManager : MonoBehaviour
 		}
 
 		sequencer.StopSequencer ();
+		uiOverlay.StartFadeIn (-2.0f);
 
 		yield return new WaitForSeconds (2.0f);
 
