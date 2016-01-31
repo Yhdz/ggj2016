@@ -10014,11 +10014,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 804
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 108
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10456,11 +10456,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 800
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: c80b652ab4db944489bb769634350e4a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12849,6 +12849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMoves: 8
   moves:
   - {x: 0, y: 1}
   - {x: 1, y: 0}
@@ -12870,6 +12871,81 @@ MonoBehaviour:
       value: 0.6027857
       inSlope: 1.4998019
       outSlope: 1.4998019
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     - time: 1
       value: 1
@@ -13431,10 +13507,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeatsPerMinute: 120
   MeasureLength: 3
+  TotalBeats: 0
   CurrentBeat: 0
   CurrentMeasure: 0
   IsRunning: 0
   TimeRunning: 0
+  BackgroundMusic: {fileID: 0}
   previousBeat: -1
   previousMeasure: -1
   beatPercentage: 0
