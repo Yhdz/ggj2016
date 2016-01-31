@@ -15,6 +15,6 @@ public class SplashScreenOverlay : MonoBehaviour
 	{
 		GUI.matrix = Matrix4x4.TRS( new Vector3( 0, 0, 0 ), Quaternion.identity, new Vector3( Screen.width/1600.0f, Screen.height/900.0f, 1.0f ) );
 
-		GUI.DrawTexture( new Rect( 0, 0, 1600, 900 ), splashImage );
+		GUI.DrawTexture( new Rect( 400, 150, 800, 600 ), splashImage );
 	}
 }
