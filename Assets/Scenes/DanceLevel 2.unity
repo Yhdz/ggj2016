@@ -4325,7 +4325,7 @@ Transform:
   m_Children:
   - {fileID: 1612633629}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &606706605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,7 +7031,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 881955451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1593, y: 450, z: 0}
+  m_LocalPosition: {x: 1800, y: 400, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1058940902}
@@ -7049,7 +7049,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 100, y: 1200}
+  m_Size: {x: 100, y: 1500}
 --- !u!1 &882773915
 GameObject:
   m_ObjectHideFlags: 0
@@ -7417,7 +7417,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2000, y: 100}
+  m_Size: {x: 2500, y: 100}
 --- !u!1 &909259518
 GameObject:
   m_ObjectHideFlags: 0
@@ -10786,7 +10786,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2000, y: 100}
+  m_Size: {x: 2500, y: 100}
 --- !u!1 &1293189570
 GameObject:
   m_ObjectHideFlags: 0
@@ -11067,6 +11067,48 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &1305361824
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400694, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c0fe504520b74e44ab47b61a12376c3e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1312906070
 GameObject:
   m_ObjectHideFlags: 0
@@ -17418,6 +17460,7 @@ MonoBehaviour:
   patternIcon2: {fileID: 2800000, guid: d4cfb93f699364b8c8a4313bc96319bf, type: 3}
   patternIcon3: {fileID: 2800000, guid: 7f87ea0b6c9664b25a0632dde0f86c75, type: 3}
   health: 0.81
+  doDrawHealthBar: 1
 --- !u!1 &2134739444
 GameObject:
   m_ObjectHideFlags: 0
