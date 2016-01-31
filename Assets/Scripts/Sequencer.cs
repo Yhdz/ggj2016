@@ -10,8 +10,8 @@ public class Sequencer : MonoBehaviour {
 	public int CurrentMeasure = 0;
 	public bool IsRunning = false;
 	public float TimeRunning = 0.0f;
+	public AudioClip BackgroundMusic = null;
 
-	private List<AudioClip> audioSequences = new List<AudioClip>();
 	public int previousBeat = -1;
 	public int previousMeasure = -1;
 	public float beatPercentage = 0.0f;
@@ -21,11 +21,6 @@ public class Sequencer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audio = GetComponent<AudioSource> ();
-
-		for (int i = 0; i < 3; i++) {
-			AudioClip clip = Resources.Load ("Music/MusicSequence1") as AudioClip;
-			audioSequences.Add (clip);
-		}
 
 		StartSequencer ();
 	}
@@ -39,7 +34,7 @@ public class Sequencer : MonoBehaviour {
 			previousMeasure = -1;
 			TimeRunning = 0.0f;
 
-			audio.clip = audioSequences [Random.Range (0, 3)];
+			audio.clip = BackgroundMusic;
 			audio.Play ();
 			audio.loop = true;
 		}
