@@ -78,7 +78,7 @@ public class Dancer : SpriteAnimator
             // Proceed to the next move in the current dance pattern and take it's movement vector
             if( currentPattern != null )
             {
-				Vector2 currentMove = currentPattern.GetMove(sequencer.CurrentBeat);
+				Vector2 currentMove = currentPattern.GetMove(sequencer.TotalBeats);
 				Vector2 newPosition = position + currentMove;
 				Vector2 newScenePosition = mapOffset + mapTileSize * newPosition;
 
@@ -116,7 +116,7 @@ public class Dancer : SpriteAnimator
 
 		if (!useErrorCurve) {
 			// Use the set animation curve to apply the transition to the next position
-			float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve (sequencer.CurrentBeat).Evaluate (sequencer.GetBeatPercentage ());
+			float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve (sequencer.TotalBeats).Evaluate (sequencer.GetBeatPercentage ());
             Vector3 animationState = Vector3.Lerp( transitionStartPosition, transitionEndPosition, animationProgress );
             spriteRenderer.flipX = animationState.x - transform.position.x > 0;
             transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);

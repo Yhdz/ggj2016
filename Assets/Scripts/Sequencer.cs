@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Sequencer : MonoBehaviour {
 	public float BeatsPerMinute = 80;
 	public int MeasureLength = 3;
+    public int TotalBeats = 0;
 	public int CurrentBeat = 0;
 	public int CurrentMeasure = 0;
 	public bool IsRunning = false;
@@ -28,6 +29,7 @@ public class Sequencer : MonoBehaviour {
 	public void StartSequencer()
 	{
 		if (!IsRunning) {
+            TotalBeats = 0;
 			CurrentBeat = 0;
 			CurrentMeasure = 0;
 			previousBeat = -1;
@@ -81,6 +83,7 @@ public class Sequencer : MonoBehaviour {
 
 		TimeRunning += Time.deltaTime;
 		CurrentBeat = ((int)Mathf.Floor (TimeRunning / beatDuration)) % MeasureLength;
+        TotalBeats = ((int)Mathf.Floor( TimeRunning / beatDuration ));
 		CurrentMeasure = ((int)Mathf.Floor (TimeRunning / beatDuration)) / 3;
 		beatPercentage = Mathf.Repeat (TimeRunning, beatDuration) / beatDuration;
 		measurePercentage = Mathf.Repeat (TimeRunning, beatDuration * MeasureLength) / (beatDuration* MeasureLength);

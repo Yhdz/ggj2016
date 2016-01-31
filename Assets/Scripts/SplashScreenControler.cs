@@ -14,7 +14,7 @@ public class SplashScreenControler : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		if( nextScene == null || nextScene.Length == 0 )
+		if( nextScene == null || nextScene.Length == 0 || Input.GetKeyDown(KeyCode.Space) )
 		{
 			throw new UnityException( "No next scene selected" );
 		}
