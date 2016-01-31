@@ -24,8 +24,6 @@ public class ScreenManager : MonoBehaviour
 	public bool autoFade = false;
 	bool fading = false;
 
-	public string SceneName = null;
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -63,7 +61,7 @@ public class ScreenManager : MonoBehaviour
 
 		if( currentScreenIndex >= screens.Count )
 		{
-			SceneManager.LoadScene( SceneName );
+			SceneManager.LoadScene( (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings );
 			return;
 		}
 
