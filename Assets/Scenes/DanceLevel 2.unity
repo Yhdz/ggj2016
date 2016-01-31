@@ -13223,7 +13223,7 @@ MonoBehaviour:
   CurrentMeasure: 0
   IsRunning: 0
   TimeRunning: 0
-  BackgroundMusic: {fileID: 0}
+  BackgroundMusic: {fileID: 8300000, guid: 4aee5c294f7654c768a1b67740c557db, type: 3}
   previousBeat: -1
   previousMeasure: -1
   beatPercentage: 0
