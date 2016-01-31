@@ -20,6 +20,9 @@ public class UIOverlay : MonoBehaviour
     public Texture patternIcon2;
     public Texture patternIcon3;
 
+	public Texture fadeoutTexture;
+	public float fadeoutValue = 1.0f;
+
     public float health = 0.75f;
 
 	public bool doDrawHealthBar = true;
@@ -58,9 +61,27 @@ public class UIOverlay : MonoBehaviour
 
         GUI.color = Color.white;
 
-        
         GUI.DrawTexture( new Rect( 1340, 35, 0.75f * 313, 0.75f * 336 ), patternIcon1 );
         GUI.DrawTexture( new Rect( 1340, 335, 0.75f * 313, 0.75f * 336 ), patternIcon2 );
         GUI.DrawTexture( new Rect( 1340, 635, 0.75f * 313, 0.75f * 336 ), patternIcon3 );
+
+		GUI.color = Color.black * (1.0f - fadeoutValue);
+		GUI.DrawTexture (new Rect( 0, 0, 1600, 900 ), fadeoutTexture);
     }
+
+	public void StartFadeIn(float duration)
+	{
+		StartCoroutine(FadeCoRoutine(1.0f / duration));
+	}
+
+	public IEnumerator FadeCoRoutine(float speed)
+	{
+		while (fadeoutValue >= 0.0f && fadeoutValue <= 1.0f)
+		{
+			fadeoutValue += Time.deltaTime * speed;
+			yield return null;
+		}
+		fadeoutValue = Mathf.Clamp01 (fadeoutValue);
+	}
 }
+
