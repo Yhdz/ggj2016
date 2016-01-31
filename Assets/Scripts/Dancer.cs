@@ -59,8 +59,6 @@ public class Dancer : SpriteAnimator
 			int soundIndex = Random.Range (0, bounceSounds.Length);
 			AudioClip sound = bounceSounds [soundIndex];
 			source.PlayOneShot(sound);
-
-			Debug.Log ("played audio");
 		}
 	}
 
