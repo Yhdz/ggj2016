@@ -915,6 +915,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &109234737 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+  m_PrefabInternal: {fileID: 396992554}
+--- !u!114 &109234738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 109234737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &139800226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3154,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &426568920 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+  m_PrefabInternal: {fileID: 738606847}
+--- !u!114 &426568921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426568920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &429043070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4301,10 +4331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnimation:
-  - {fileID: 21300000, guid: 9b9e5cee559b441409c016e94e98eb4e, type: 3}
-  - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
-  - {fileID: 21300000, guid: c59b39539b9f9c843a6db99b236f3f37, type: 3}
-  - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
+  - {fileID: 21300000, guid: 22e3220b792ebee43b19903267c1a157, type: 3}
+  - {fileID: 21300000, guid: 07a092a9d8af98c48804cf56a3a33fc1, type: 3}
+  - {fileID: 21300000, guid: 4665879a109f1bc4a910502c4ea36406, type: 3}
   spriteAnimationTimeOut: 0
   currentPattern: {fileID: 0}
   ErrorCurve:
@@ -4356,7 +4385,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 9b9e5cee559b441409c016e94e98eb4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22e3220b792ebee43b19903267c1a157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5524,11 +5553,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 200
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 400
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5552,9 +5581,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 21223962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1623def9481c843ce9ff69ad7b5254c3,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &688797366
@@ -13180,10 +13215,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeatsPerMinute: 120
   MeasureLength: 3
+  TotalBeats: 0
   CurrentBeat: 0
   CurrentMeasure: 0
   IsRunning: 0
   TimeRunning: 0
+  BackgroundMusic: {fileID: 0}
   previousBeat: -1
   previousMeasure: -1
   beatPercentage: 0

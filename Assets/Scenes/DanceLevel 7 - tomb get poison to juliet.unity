@@ -2801,6 +2801,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c80b652ab4db944489bb769634350e4a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &396992555 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+  m_PrefabInternal: {fileID: 396992554}
+--- !u!114 &396992556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396992555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &402165069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,11 +5539,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 200
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 400
+      value: 494
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5552,9 +5567,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 495962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 21223962, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02ef0ba40c69246a193ec4ce441353a1,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 11401282, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 83cd097f5ed972c43a483bdd03f9cf91, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &688797366
@@ -6223,6 +6244,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c80b652ab4db944489bb769634350e4a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &738606848 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158944, guid: c80b652ab4db944489bb769634350e4a, type: 2}
+  m_PrefabInternal: {fileID: 738606847}
+--- !u!114 &738606849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738606848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &755031269
 GameObject:
   m_ObjectHideFlags: 0
@@ -13180,10 +13216,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeatsPerMinute: 120
   MeasureLength: 3
+  TotalBeats: 0
   CurrentBeat: 0
   CurrentMeasure: 0
   IsRunning: 0
   TimeRunning: 0
+  BackgroundMusic: {fileID: 0}
   previousBeat: -1
   previousMeasure: -1
   beatPercentage: 0
