@@ -10,7 +10,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroLevel1.unity
   - enabled: 1
-    path: Assets/Scenes/DanceLevel.unity
+    path: Assets/Scenes/DanceLevel 1.unity
+  - enabled: 1
+    path: Assets/Scenes/DanceLevel 2.unity
   - enabled: 1
     path: Assets/Scenes/IntroLevel2.unity
   - enabled: 1
@@ -18,10 +20,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroLevel3.unity
   - enabled: 1
+    path: Assets/Scenes/DanceLevel 4.unity
+  - enabled: 1
     path: Assets/Scenes/IntroLevel4.unity
+  - enabled: 1
+    path: Assets/Scenes/DanceLevel 5 - courtyard tybolt.unity
   - enabled: 1
     path: Assets/Scenes/IntroLevel5.unity
   - enabled: 1
+    path: Assets/Scenes/DanceLevel 6 - bedroom get Juliet.unity
+  - enabled: 1
     path: Assets/Scenes/IntroLevel6.unity
   - enabled: 1
+    path: Assets/Scenes/DanceLevel 7 - tomb get poison to juliet.unity
+  - enabled: 1
     path: Assets/Scenes/IntroLevel7.unity
+  - enabled: 1
+    path: Assets/Scenes/DanceLevel 8 - tomb juliet dies.unity
