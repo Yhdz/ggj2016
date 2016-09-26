@@ -79,7 +79,7 @@ public class Dancer : SpriteAnimator
             if( currentPattern != null )
             {
 				Vector2 currentMove = currentPattern.GetMove(sequencer.TotalBeats);
-                Vector2 newPosition = position + currentMove;
+				Vector2 newPosition = position + currentMove;
 				Vector2 newScenePosition = mapOffset + mapTileSize * newPosition;
 
 				int mask = 1 << LayerMask.NameToLayer("Collider");
@@ -112,7 +112,8 @@ public class Dancer : SpriteAnimator
             
         }
 
-        
+		
+
 		if (!useErrorCurve) {
 			// Use the set animation curve to apply the transition to the next position
 			float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve (sequencer.TotalBeats).Evaluate (sequencer.GetBeatPercentage ());

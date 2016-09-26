@@ -108,16 +108,16 @@ public class LevelManager : MonoBehaviour
         {
             JulietteHappiness -= julietteHappinessChunk;
             if ( JulietteHappiness <= 0.0f )
-                StartCoroutine( EndGameSequence(false) );
+                StartCoroutine( EndGameSequence() );
         }
     }
 
 	public void OnDestinationReached()
 	{
-		StartCoroutine(EndGameSequence(true));
+		StartCoroutine(EndGameSequence());
 	}
 
-	private IEnumerator EndGameSequence(bool loadNextLevel)
+	private IEnumerator EndGameSequence()
 	{
 		while (!sequencer.IsBeatChangeFrame ()) {
 			yield return null;
@@ -128,11 +128,7 @@ public class LevelManager : MonoBehaviour
 
 		yield return new WaitForSeconds (2.0f);
 
-		if (loadNextLevel) {
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
-		} else {
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
-		}
+        SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
     }
 
 	public bool IsPositionInField(int x, int y)

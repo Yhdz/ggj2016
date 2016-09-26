@@ -12,6 +12,7 @@ public class DancePattern : MonoBehaviour
 
 	public Vector2 GetMove(int beat)
     {
+        Debug.Log( beat + " of " + maxMoves + "/"+moves.Length);
 		return moves[beat%maxMoves];
     }
 
