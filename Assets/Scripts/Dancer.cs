@@ -9,9 +9,17 @@ public class Dancer : SpriteAnimator
     // The dance pattern the dancer is following
     public DancePattern currentPattern = null;
 
+<<<<<<< HEAD
 	public AnimationCurve ErrorCurve = new AnimationCurve ();
 
 	public AudioClip[] bounceSounds = new AudioClip[0];
+=======
+    // The sprite animation series the dancer follows
+    public Sprite[] spriteAnimation = null;
+
+    // The index of the sprite animation
+    int currentSpriteIndex = 0;
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 
 	Vector2 position;
 
@@ -28,8 +36,6 @@ public class Dancer : SpriteAnimator
     Vector2 mapOffset;
 
 	private LevelManager levelManager = null;
-
-	private bool useErrorCurve = false;
 
     void Start()
     {
@@ -69,8 +75,6 @@ public class Dancer : SpriteAnimator
         // Update position to move to when the beat has passed
         if( sequencer.IsBeatChangeFrame() )
         {
-			useErrorCurve = false;
-
             // Update the start position from current position by matching it to the grid
 			Vector2 startScenePosition = mapOffset + mapTileSize * position;
 			transitionStartPosition = new Vector3( startScenePosition.x, startScenePosition.y, transform.position.z );
@@ -90,6 +94,7 @@ public class Dancer : SpriteAnimator
 					// no collision, walk to the new position
 					position = newPosition;
 					transitionEndPosition = new Vector3( newScenePosition.x, newScenePosition.y, transitionStartPosition.z );
+<<<<<<< HEAD
 				}
 				else {
 					// collision with collider, bounce to wall
@@ -103,6 +108,14 @@ public class Dancer : SpriteAnimator
 					useErrorCurve = true;
 
 					PlayRandomBounceSound ();
+=======
+
+					// decrease Juliette happyiness
+					levelManager.JulietteHappiness = Mathf.Max(levelManager.JulietteHappiness - 0.1f, 0.0f);
+				}
+				else {
+					transitionEndPosition = transitionStartPosition;
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 				}
             }
             else
@@ -114,6 +127,7 @@ public class Dancer : SpriteAnimator
 
 		
 
+<<<<<<< HEAD
 		if (!useErrorCurve) {
 			// Use the set animation curve to apply the transition to the next position
 			float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve (sequencer.TotalBeats).Evaluate (sequencer.GetBeatPercentage ());
@@ -127,5 +141,11 @@ public class Dancer : SpriteAnimator
             spriteRenderer.flipX = animationState.x - transform.position.x > 0;
             transform.position = new Vector3 (animationState.x, animationState.y, transitionStartPosition.z);
 		}
+=======
+        // Use the set animation curve to apply the transition to the next position
+		float animationProgress = (currentPattern == null) ? 0.0f : currentPattern.GetCurve(sequencer.CurrentBeat).Evaluate( sequencer.GetBeatPercentage() );
+        Vector3 animationState = Vector3.Lerp( transitionStartPosition, transitionEndPosition, animationProgress );
+        transform.position = new Vector3( animationState.x, animationState.y, transitionStartPosition.z );
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
     }
 }

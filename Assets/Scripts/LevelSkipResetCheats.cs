@@ -15,7 +15,7 @@ public class LevelSkipResetCheats : MonoBehaviour
         if( Input.GetKeyDown( KeyCode.F5 ) )
             SceneManager.LoadScene( 0 );
         if( Input.GetKeyDown( KeyCode.F6 ) )
-            Application.CaptureScreenshot( "screenshot"+Mathf.FloorToInt(Time.timeSinceLevelLoad)+".png" );
+            ScreenCapture.CaptureScreenshot( "screenshot"+Mathf.FloorToInt(Time.timeSinceLevelLoad)+".png" );
 
     }
 }

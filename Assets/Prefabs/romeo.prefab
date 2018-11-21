@@ -1,15 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &104390
+=======
+--- !u!1 &100112
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD
   - 4: {fileID: 475816}
   m_Layer: 0
   m_Name: Patterns
+=======
+  - 4: {fileID: 461140}
+  - 114: {fileID: 11487484}
+  m_Layer: 0
+  m_Name: patternSlotC
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,13 +42,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!1 &141018
+=======
+--- !u!1 &149442
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD
   - 4: {fileID: 481550}
   - 212: {fileID: 21200342}
   - 114: {fileID: 11406560}
@@ -46,36 +62,62 @@ GameObject:
   - 114: {fileID: 11407178}
   m_Layer: 0
   m_Name: romeo
+=======
+  - 4: {fileID: 416324}
+  - 114: {fileID: 11442086}
+  m_Layer: 0
+  m_Name: patternSlotA
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!1 &142664
+=======
+--- !u!1 &163818
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD
   - 4: {fileID: 402984}
   - 114: {fileID: 11418612}
   m_Layer: 0
   m_Name: patternSlotA
+=======
+  - 4: {fileID: 479020}
+  - 114: {fileID: 11442400}
+  m_Layer: 0
+  m_Name: UI Overlay
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!1 &163818
+=======
+--- !u!1 &174590
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD
   - 4: {fileID: 479020}
   - 114: {fileID: 11442400}
+=======
+  - 4: {fileID: 407592}
+  - 114: {fileID: 11497470}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_Layer: 0
   m_Name: UI Overlay
   m_TagString: Untagged
@@ -83,6 +125,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!1 &185860
 GameObject:
   m_ObjectHideFlags: 1
@@ -99,6 +142,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 --- !u!1 &198428
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,11 +167,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &402984
+=======
+--- !u!4 &407592
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 142664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -301, y: 41.58139, z: 10}
@@ -135,16 +185,46 @@ Transform:
   m_Father: {fileID: 475816}
   m_RootOrder: 0
 --- !u!4 &447436
+=======
+  m_GameObject: {fileID: 174590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -273, y: 41.58139, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470878}
+  m_RootOrder: 1
+--- !u!4 &416324
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -301, y: 41.58139, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470878}
+  m_RootOrder: 0
+--- !u!4 &461140
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 185860}
+=======
+  m_GameObject: {fileID: 100112}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -245, y: 41.58139, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 475816}
+=======
+  m_Father: {fileID: 470878}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_RootOrder: 2
 --- !u!4 &470878
 Transform:
@@ -156,6 +236,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< HEAD
   - {fileID: 475816}
   - {fileID: 479020}
   m_Father: {fileID: 481550}
@@ -188,6 +269,15 @@ Transform:
   m_Father: {fileID: 470878}
   m_RootOrder: 1
 --- !u!4 &480820
+=======
+  - {fileID: 416324}
+  - {fileID: 407592}
+  - {fileID: 461140}
+  - {fileID: 479020}
+  m_Father: {fileID: 481550}
+  m_RootOrder: 0
+--- !u!4 &479020
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -197,8 +287,13 @@ Transform:
   m_LocalPosition: {x: -273, y: 41.58139, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 475816}
   m_RootOrder: 1
+=======
+  m_Father: {fileID: 470878}
+  m_RootOrder: 3
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 --- !u!4 &481550
 Transform:
   m_ObjectHideFlags: 1
@@ -206,7 +301,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 300, y: 200, z: 0}
+=======
+  m_LocalPosition: {x: 900, y: 200, z: -2}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470878}
@@ -274,7 +373,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -150}
   serializedVersion: 2
   m_Size: {x: 80, y: 80}
 --- !u!81 &8177694
@@ -405,6 +504,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
   spriteAnimationTimeOut: 0
   currentPattern: {fileID: 0}
+<<<<<<< HEAD
   ErrorCurve:
     serializedVersion: 2
     m_Curve:
@@ -428,6 +528,14 @@ MonoBehaviour:
     m_RotationOrder: 0
   bounceSounds: []
 --- !u!114 &11407178
+=======
+  spriteAnimation:
+  - {fileID: 21300000, guid: 9b9e5cee559b441409c016e94e98eb4e, type: 3}
+  - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
+  - {fileID: 21300000, guid: c59b39539b9f9c843a6db99b236f3f37, type: 3}
+  - {fileID: 21300000, guid: 01480c8e752a34746b03b4775db73263, type: 3}
+--- !u!114 &11423694
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -438,21 +546,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c468574b9171646923bfd6a9532673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!114 &11411052
+=======
+  tileSize: 100
+  offset: {x: 0, y: 0}
+  mapWidth: 12
+  mapHeight: 10
+  patternSlots:
+  - {fileID: 11442086}
+  - {fileID: 11497470}
+  - {fileID: 11487484}
+  dancerRomeo: {fileID: 11406560}
+  currentPatternIndex: 0
+  nextPatternIndex: -1
+--- !u!114 &11442086
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 185860}
+=======
+  m_GameObject: {fileID: 149442}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moves:
+<<<<<<< HEAD
   - {x: 1, y: 0}
   - {x: -1, y: 1}
   - {x: -2, y: -1}
+=======
+  - {x: -1, y: 0}
+  - {x: 0, y: 1}
+  - {x: -1, y: 0}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   curves:
   - serializedVersion: 2
     m_Curve:
@@ -504,12 +637,45 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+<<<<<<< HEAD
 --- !u!114 &11418612
+=======
+--- !u!114 &11442400
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ff44d082e90e94ba8561ae1531171c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sidebars: {fileID: 2800000, guid: fafb2e25cfcef40c79d2df711d2b6a27, type: 3}
+  colorCurrentPattern: {r: 0.4852941, g: 1, b: 0.4852941, a: 1}
+  colorNextPattern: {r: 0.8897059, g: 1, b: 0.8897059, a: 1}
+  julietPortrait: {fileID: 2800000, guid: 520c1763953919a4bbeede4eb6f00bdc, type: 3}
+  julietHealthBarFrame: {fileID: 2800000, guid: 79f7c9afc55499f4bb48b53bd2c9aeb5,
+    type: 3}
+  julietHealthBarFill: {fileID: 2800000, guid: 9d1f3d1ef25e0b845bb6f078ac39cb66, type: 3}
+  patternFrame1: {fileID: 2800000, guid: c4ed3bcf49308ef45b6900409c6c511b, type: 3}
+  patternFrame2: {fileID: 2800000, guid: 6a255ce11618c1a49b3a4588114bf66f, type: 3}
+  patternFrame3: {fileID: 2800000, guid: af7b05f1adcac114ca846665c9b71220, type: 3}
+  patternIcon1: {fileID: 2800000, guid: f2eb22577f1e44ac1afcaff9eb63483e, type: 3}
+  patternIcon2: {fileID: 2800000, guid: d4cfb93f699364b8c8a4313bc96319bf, type: 3}
+  patternIcon3: {fileID: 2800000, guid: 7f87ea0b6c9664b25a0632dde0f86c75, type: 3}
+  health: 0.81
+--- !u!114 &11487484
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 142664}
+=======
+  m_GameObject: {fileID: 100112}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
@@ -517,8 +683,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moves:
   - {x: 0, y: 1}
+<<<<<<< HEAD
   - {x: 1, y: 0}
   - {x: -1, y: -2}
+=======
+  - {x: -1, y: 0}
+  - {x: 0, y: -1}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   curves:
   - serializedVersion: 2
     m_Curve:
@@ -527,10 +698,17 @@ MonoBehaviour:
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+<<<<<<< HEAD
     - time: 0.26117963
       value: 0.64294535
       inSlope: 1.4993548
       outSlope: 1.4993548
+=======
+    - time: 0.24912669
+      value: 0.6027857
+      inSlope: 1.4998019
+      outSlope: 1.4998019
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
       tangentMode: 0
     - time: 1
       value: 1
@@ -570,6 +748,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+<<<<<<< HEAD
 --- !u!114 &11423694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,11 +786,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11437560
+=======
+--- !u!114 &11497470
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 137834}
+=======
+  m_GameObject: {fileID: 174590}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 849c4366f4ec64a4dbd97c1a5b9641d6, type: 3}
@@ -619,8 +805,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moves:
   - {x: 1, y: 0}
+<<<<<<< HEAD
   - {x: 2, y: 0}
   - {x: -1, y: 2}
+=======
+  - {x: 0, y: -1}
+  - {x: 1, y: 0}
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
   curves:
   - serializedVersion: 2
     m_Curve:

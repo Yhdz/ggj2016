@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 /**
  * Manages the level: the tiles, the dancers, the beat, everything.
@@ -44,6 +45,7 @@ public class LevelManager : MonoBehaviour
     public int nextPatternIndex = -1;
 
     // Link to the sequencer
+<<<<<<< HEAD
     private Sequencer sequencer = null;
 
 	private UIOverlay uiOverlay = null;
@@ -52,6 +54,9 @@ public class LevelManager : MonoBehaviour
     SortForZOrder[] sortZOrderObjects = null;
 
     public BadEffectType badEffect = BadEffectType.HappinessDec;
+=======
+    Sequencer sequencer = null;
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 
     /**
      * Starts the level.
@@ -60,9 +65,12 @@ public class LevelManager : MonoBehaviour
     {
         // Fetch sequencer
         sequencer = GetComponent<Sequencer>();
+<<<<<<< HEAD
 		uiOverlay = GameObject.FindObjectOfType<UIOverlay>();
 		uiOverlay.fadeoutValue = 0.0f;
 		uiOverlay.StartFadeIn (0.5f);
+=======
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
 
         // Collect all dancers
         dancers = GameObject.FindObjectsOfType<Dancer>();
@@ -87,12 +95,27 @@ public class LevelManager : MonoBehaviour
         if( Input.GetKeyDown( KeyCode.D ) )
             nextPatternIndex = 2;
 
+        // Update UI highlighting
+        for( int i = 0; i < patternSlots.Length; i++ )
+        {
+            /*SpriteRenderer spriteRenderer = patternSlots[i].GetComponent<SpriteRenderer>();
+            if( i == currentPatternIndex )
+                spriteRenderer.color = Color.green;
+            else if( i == nextPatternIndex )
+                spriteRenderer.color = Color.red;
+            else
+                spriteRenderer.color = Color.white;*/
+        }
+
+
         // Move to next pattern if a different one is selected
         if( sequencer.IsMeasureChangeFrame() && nextPatternIndex != -1 )
         {
             currentPatternIndex = nextPatternIndex;
+
             dancerRomeo.currentPattern = patternSlots[currentPatternIndex];
         }
+<<<<<<< HEAD
 
         // Update Z-order
         System.Array.Sort( sortZOrderObjects, new YPositionSorter() );
@@ -110,6 +133,8 @@ public class LevelManager : MonoBehaviour
             if ( JulietteHappiness <= 0.0f )
                 StartCoroutine( EndGameSequence() );
         }
+=======
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
     }
 
 	public void OnDestinationReached()
@@ -140,6 +165,7 @@ public class LevelManager : MonoBehaviour
 		}
 	}
 }
+<<<<<<< HEAD
 
 public class YPositionSorter : IComparer
 {
@@ -155,3 +181,5 @@ public class YPositionSorter : IComparer
     }
 
 }
+=======
+>>>>>>> parent of 04b37f8... Merge branch 'develop' of https://github.com/Yhdz/ggj2016 into develop
